@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Montserrat;
 }
 html, body{
     width: 100%;
@@ -17,8 +18,8 @@ html, body{
     padding: 0 3rem;
 }
 .video-container {
-    width: 1250px; /* Set desired width */
-    height: 550px; /* Set desired height */
+    width: 1400px; /* Set desired width */
+    height: 600px; /* Set desired height */
     overflow: hidden; /* Optional: hides overflowed parts of the video */
     margin-left: 1vw;
 }
@@ -26,6 +27,7 @@ html, body{
     width: 100%;
     height: auto;
 }
+
 #page2{
     /* height: 100vh; */
     padding: 0 3rem;
@@ -33,7 +35,7 @@ html, body{
     position: relative;
     overflow-x: hidden;
     line-height: 1.5;
-    background: #f4f4f4;
+    /* background: #f4f4f4; */
     color: #111;
     font-size: 14px;
     text-align: center;
@@ -42,4 +44,58 @@ html, body{
     justify-content: center;
     flex-direction: column;
     width: 100%
+}
+.hidden-text{
+    width: 80%;
+    /* background: red; */
+    margin: 5px 150px;
+}
+.hidden-text p{
+    text-align: center;
+    font-size: 20px;
+    color: #5d5959;
+}
+/* page 2 poster design */
+.poster{
+    width:80%;
+    height: 160px;
+    background: red;
+    margin: 4% 10%;
+}
+#page3{
+    
+}
+#page4{
+    /* height: 100vh; */
+    padding: 0 3rem;
+    /* background-color: red; */
+    position: relative;
+    overflow-x: hidden;
+    line-height: 1.5;
+    /* background: #f4f4f4; */
+    color: #111;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%
+}
+.poster img{
+    width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.popular{
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #2c4058;
+    margin: 20px;
+}
+.text{
+    text-align: center;
+    font-size: 19px;
+    color: #5d5959;
 }

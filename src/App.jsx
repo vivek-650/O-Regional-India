@@ -1,6 +1,7 @@
 import './App.css'
 import Nav from './components/Nav'
 import video from './assets/images/heroVideo.mp4'
+import DestinationCards from './components/DesitnationCards'
 function App() {
 
   return (
@@ -11,13 +12,37 @@ function App() {
       </div>
       <div id="page2">
         <div className="container">
-          <div className="spoiler">
-            <p className="hidden-text">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus vero dolore repudiandae quasi maxime! Error, corrupti at! Totam sint perspiciatis minus at quasi dolor ad! Eos reiciendis rem sed maiores cum recusandae sunt, architecto itaque ducimus voluptate quod doloribus doloremque asperiores repellendus placeat at! Hic molestiae culpa voluptates minus impedit optio fuga dolorum? Exercitationem inventore debitis iste facilis dicta omnis distinctio est quibusdam pariatur eligendi, praesentium esse quaerat nostrum veritatis nam? Perferendis nemo voluptas sed, fugit, deleniti quod eum architecto corporis doloremque sunt saepe minus impedit obcaecati consectetur totam corrupti, nulla id dolor ipsum odit dolores! Laudantium reprehenderit error ab quam rem amet temporibus accusantium non? Consectetur saepe, dolorem ratione molestiae dolore expedita aliquam nam aperiam neque at et, voluptate delectus, fugit mollitia suscipit voluptates repellendus! Rerum, esse magnam aliquid facere praesentium dolorem corporis, quisquam commodi dolor nisi maiores numquam at delectus sequi aperiam sed quasi. Magni, optio, vitae eaque quo rem laboriosam error quam minus facilis est pariatur possimus molestias doloribus perspiciatis consequuntur mollitia odit amet itaque ipsum! Minima dolor exercitationem voluptatum fugit quod, repellendus perspiciatis aliquam nam repellat ipsam sint suscipit molestias culpa magnam tenetur, commodi est dolorem a corporis, iusto molestiae obcaecati modi nulla quas. Illum, autem.
+          <div className="hidden-text">
+            <p>
+            One of the oldest civilisations in the world, India is a mosaic of multicultural experiences. With a rich heritage and myriad attractions, the country is among the most popular tourist destinations in the world. It covers an area of 32, 87,263 sq. km, extending from the snow-covered Himalayan heights to the tropical rain forests of the south. As the 7th largest country in the world, India stands apart from the rest of Asia, marked off as it is by mountains and the sea, which give the country a distinct geographical entity.
             </p>
           </div>
+          <div className="poster">
+            <img src="https://www.incredibleindia.org/content/dam/incredible-india-v2/images/banner/Monsoon-campaign_website-banner.jpg" alt="" />
+          </div>
+            <p className="popular"> Popular In India</p>
+            <p className="text">India is a home to the finest architectural heritage, serene ghats, spectacular landscapes and largest tiger reserve</p>
+         
         </div>
       </div>  
+      <div id="page3">
+
+      </div>
+      <div id="page4">
+      <div className="container">
+        <div className="poster">
+          <img src="https://www.incredibleindia.org/content/dam/incredible-india-v2/images/banner/Dekho-Apna-Desh-website-banner-1.png" alt="" />
+        </div>
+        <p className="popular"> Must Visit Destinations</p>
+            <p className="text">From historical cities to natural splendours, come see the best of India</p>
+
+            <div className="Destination-cards">
+              <DestinationCards />
+              </div>
+              
+            </div>
+      </div>
+
     </>
   )
 }
