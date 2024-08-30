@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+}
+
+#page1{
+    width: 100vw;
+    height: 90vh;
+    /* background-color: red; */
+    padding: 0 3rem;
+}
+.video-container {
+    width: 1250px; /* Set desired width */
+    height: 550px; /* Set desired height */
+    overflow: hidden; /* Optional: hides overflowed parts of the video */
+    margin-left: 1vw;
+}
+#video{
+    width: 100%;
+    height: auto;
+}
+#page2{
+    /* height: 100vh; */
+    padding: 0 3rem;
+    /* background-color: red; */
+    position: relative;
+    overflow-x: hidden;
+    line-height: 1.5;
+    background: #f4f4f4;
+    color: #111;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%
+}
