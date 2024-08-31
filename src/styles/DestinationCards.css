@@ -8,15 +8,56 @@ html, body{
     height: 100%;
    
 }
-.card{
-    background: red;
-    width: 20%;
+.cards{
+    margin-top: 100px;
+    /* background: red; */
+    margin: 5% 10%;
+    width: 80%;
     height: 500px;
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
+    /* overflow: hidden; */
+    position: relative;
+}
+
+.card{
+    position: relative;
+    /* background: blue; */
+    background: #f4f4f4;
+    width: 240px;
+    height: 380px;
+    border-radius: 50px;
 }
 .card img{
-    width: 100%;
+    width: 200px;
     height: 200px;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+}
+.textarea{
+    height: 40%;
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    /* background: rgba(0, 0, 0, 0.5); */
+    color: black;
+    /* padding: 10px; */
+    border-radius: 5px;
+    width: 220px;
+}
+.textarea h3{
+    font-size: 20px;
+   position: absolute;
+   top: -30px;
+   left: 40%;
+   transform: translate(-50%,-50%);
+}
+.textarea p{
+    font-size: 15px;
+   width: 80%;
 }
 
