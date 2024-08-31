@@ -1,6 +1,6 @@
 import '../styles/SearchPage.css';
 import PropTypes from 'prop-types';
-import { getAllCities } from '../services/operations/cityAPI';
+import { getAllCities, getCityData } from '../services/operations/cityAPI';
 import { useEffect, useState } from 'react';
 
 const SearchPage = ({ onClose }) => {
@@ -10,9 +10,11 @@ const SearchPage = ({ onClose }) => {
   useEffect(()=>{
     (async ()=>{
       try {
-        const response = await getAllCities();
-
-        console.log("response is--", response);
+        const cityName = "asansol";
+        const response = await getCityData(cityName);
+        const citiesList = response.data.cityData;
+        console.log("City is--", citiesList);
+        setCities(citiesList);
       } catch (error) {
         console.log("error: ", error);
       }
