@@ -13,9 +13,11 @@ html, body{
     /* background: red; */
     margin: 5% 10%;
     width: 80%;
+    margin-right: 10%;
     height: 500px;
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    gap: 50px;
     flex-wrap: wrap;
     /* overflow: hidden; */
     position: relative;
@@ -26,8 +28,8 @@ html, body{
     /* background: blue; */
     background: #f4f4f4;
     width: 240px;
-    height: 380px;
-    border-radius: 50px;
+    height: 360px;
+    border-radius: 10px;
 }
 .card img{
     width: 200px;
@@ -41,7 +43,7 @@ html, body{
 .textarea{
     height: 40%;
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     left: 40px;
     /* background: rgba(0, 0, 0, 0.5); */
     color: black;
