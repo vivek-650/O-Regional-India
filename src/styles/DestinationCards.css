@@ -1,65 +1,76 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.destination-cards-container {
+    max-width: 80rem;
+    /* padding: 2rem 1rem; */
+    margin: 0 auto;
+    background: var(--bg);
 }
-html, body{
-    width: 100%;
-    height: 100%;
-   
+
+.destination-cards__swiper-container {
+    height: 30rem; /* Adjust the height of the container */
+    width: 90%;
+    padding: 1rem 0;
+    position: relative;
 }
-.cards{
-    margin-top: 100px;
-    /* background: red; */
-    margin: 5% 10%;
-    width: 80%;
-    margin-right: 10%;
-    height: 500px;
+
+.destination-cards__swiper-slide {
+    width: 15rem; /* Set a smaller width for each card */
+    height: 30rem; /* Set a smaller height for each card */
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 50px;
-    flex-wrap: wrap;
-    /* overflow: hidden; */
-    position: relative;
+    justify-content: center;
+    align-items: center;
+    /* background: #f4f4f4; */
+    border-radius: 1rem;
+    text-align: center;
 }
 
-.card{
-    position: relative;
-    /* background: blue; */
-    background: #f4f4f4;
-    width: 240px;
-    height: 360px;
-    border-radius: 10px;
-}
-.card img{
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    border-radius: 10px;
-}
-.textarea{
-    height: 40%;
-    position: absolute;
-    bottom: 10px;
-    left: 40px;
-    /* background: rgba(0, 0, 0, 0.5); */
-    color: black;
-    /* padding: 10px; */
-    border-radius: 5px;
-    width: 220px;
-}
-.textarea h3{
-    font-size: 20px;
-   position: absolute;
-   top: -30px;
-   left: 40%;
-   transform: translate(-50%,-50%);
-}
-.textarea p{
-    font-size: 15px;
-   width: 80%;
+.destination-cards__swiper-slide img {
+    width: 20rem; /* Reduce the image width */
+    height: 25rem; /* Reduce the image height */
+    border-radius: 1rem;
+    margin-top: 1rem;
+    object-fit: cover;
 }
 
+.textarea {
+    padding: 1rem;
+}
+
+.textarea h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.textarea p {
+    font-size: 0.9rem;
+}
+
+.destination-cards__swiper-slide-shadow-left,
+.destination-cards__swiper-slide-shadow-right {
+    display: none; /* Hide shadows for clarity */
+}
+
+.arrow-left, .arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.arrow-left {
+    left: 0;
+}
+
+.arrow-right {
+    right: 0;
+}
+
+.arrow-left:disabled, .arrow-right:disabled {
+    background-color: whitesmoke;
+    cursor: not-allowed;
+}
