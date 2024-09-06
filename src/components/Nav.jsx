@@ -1,4 +1,5 @@
-  import { useState } from 'react';
+  import { useState, } from 'react';
+  import { Link } from 'react-router-dom';
   import logo from '../assets/images/logo_crop.png';
   import '../styles/Nav.css';
   import SearchPage from './SearchPage';
@@ -17,7 +18,8 @@
           <li>Nav-link-2 ▾</li>
           <li>Nav-link-3 ▾</li>
         </div>
-        <img src={logo} alt="logo" id='logo'/>
+        <Link to="/"><img src={logo} alt="logo" id='logo'/></Link>
+        
         <div className="nav3">
           <button onClick={toggleSearch}>
             <i className="ri-search-2-line"></i>

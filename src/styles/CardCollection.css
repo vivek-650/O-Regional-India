@@ -13,7 +13,7 @@ html, body{
 .cards-collection{
     width: 100%;
     height: 50%;
-    background: red;
+    /* background: red; */
 }
 .cards-collection img{
     width:282px;

@@ -17,15 +17,10 @@ html, body{
     /* background-color: red; */
     padding: 0 3rem;
 }
-.video-container {
-    width: 1400px; /* Set desired width */
-    height: 600px; /* Set desired height */
-    overflow: hidden; /* Optional: hides overflowed parts of the video */
-    margin-left: 1vw;
-}
 #video{
-    width: 100%;
-    height: auto;
+    width: 76vw;
+    /* height: 30vh;    */
+    margin: 1rem 0 0 7rem;
 }
 
 #page2{
@@ -59,7 +54,7 @@ html, body{
 .poster{
     width:80%;
     height: 160px;
-    background: red;
+    /* background: red; */
     margin: 4% 10%;
 }
 #page3{
