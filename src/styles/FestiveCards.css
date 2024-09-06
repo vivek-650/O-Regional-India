@@ -1,0 +1,33 @@
+.festive-cards__container {
+    max-width: 80rem;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    background: var(--bg);
+
+  }
+ .festive-cards__swiper-container {
+    height: 35rem; /* Reduced height for the container */
+    width: 90%;
+    padding: 1rem 0;
+    position: relative;
+  }
+  
+  .festive-cards__swiper-slide {
+    width: 15rem; /* Reduced width for smaller cards */
+    height: 28rem; /* Reduced height */
+    position: relative;
+  }
+  
+  .festive-cards__swiper-slide img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    object-fit: cover;
+  }
+  
+  .festive-cards__swiper-slide-shadow-left,
+  .festive-cards__swiper-slide-shadow-right {
+    display: none;
+  }
+  
+  

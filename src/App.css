@@ -99,3 +99,23 @@ html, body{
     font-size: 19px;
     color: #5d5959;
 }
+#page5{
+    /* height: 100vh; */
+    padding: 0 3rem;
+    /* background-color: red; */
+    position: relative;
+    overflow-x: hidden;
+    line-height: 1.5;
+    /* background: #f4f4f4; */
+    color: #111;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%
+}
+.Destination-cards{
+    width: 100%;
+}

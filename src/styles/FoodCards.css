@@ -1,0 +1,145 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  display: block; /* Or use default styles */
+  height: auto;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+}
+
+.card-slider-main {
+  display: flex;
+  white-space: nowrap;
+  overflow-x: auto;
+  margin-top: 10px;
+  gap: 30px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.card-slider-main::-webkit-scrollbar {
+  display: none;
+}
+
+.label-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label-container h2 {
+  font-family: "Poppins", serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.label-container i {
+  font-size: 18px;
+}
+
+.label-container button {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  color: #111;
+  cursor: pointer;
+  padding: 10px;
+  width: fit-content;
+}
+
+.label-container button:disabled {
+  background-color: rgba(245, 245, 245, 0.541);
+  cursor: not-allowed;
+  border: none;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-wrapper img {
+  height: 350px;
+  width: 200px;
+  cursor: pointer;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-wrapper img:hover {
+  transform: scale(1.3);
+}
+
+/* Mobile adjustments */
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .container {
+    max-width: 350px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  .card-wrapper img {
+    height: 100px;
+    width: 80px;
+  }
+
+  .label-container h2 {
+    font-size: 18px;
+  }
+
+  .label-container button {
+    padding: 5px;
+  }
+}
+
+/* For screens above 576px */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+
+  .card-wrapper img {
+    height: 150px;
+    width: 120px;
+  }
+}
+
+/* For screens above 768px */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+/* For screens above 992px */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* For screens above 1200px */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
