@@ -1,16 +1,15 @@
 import '../styles/SearchPage.css';
 import PropTypes from 'prop-types';
-import { getAllCities, getCityData } from '../services/operations/cityAPI';
-import { useEffect, useState } from 'react';
+import { getCityData } from '../services/operations/cityAPI';
+import {  useState } from 'react';
 
 const SearchPage = ({ onClose }) => {
-
   const [cities, setCities] = useState([]);
+  const [cityName, setCityName] = useState(''); // State for the input value
 
-  useEffect(()=>{
-    (async ()=>{
+  const handleSearch = async () => {
+    if (cityName) { // Fetch data only if cityName is not empty
       try {
-        const cityName = "asansol";
         const response = await getCityData(cityName);
         const citiesList = response.data.cityData;
         console.log("City is--", citiesList);
@@ -18,8 +17,8 @@ const SearchPage = ({ onClose }) => {
       } catch (error) {
         console.log("error: ", error);
       }
-    })()
-  }, [])
+    }
+  };
 
   if (typeof onClose !== 'function') {
     throw new Error('The onClose prop must be a function.');
@@ -27,16 +26,25 @@ const SearchPage = ({ onClose }) => {
 
   return (
     <div className="search-page">
-      <button>getCity</button>
       <button onClick={onClose}><i className="ri-close-large-line"></i></button>
       <div className="search-box">
-          <input type="text" />
-          <i className="ri-search-line"></i>
+        <input
+          type="text"
+          value={cityName}
+          onChange={(e) => setCityName(e.target.value)} 
+          placeholder="Search city..."
+        />
+        <i 
+          className="ri-search-line" 
+          onClick={handleSearch} 
+        ></i>
       </div>
     </div>
   );
 };
+
 SearchPage.propTypes = {
   onClose: PropTypes.func.isRequired,
-}
+};
+
 export default SearchPage;
