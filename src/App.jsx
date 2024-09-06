@@ -5,6 +5,7 @@ import DestinationCards from "./components/DesitnationCards";
 import FestiveCards from "./components/FestiveCards";
 import CardCollection from "./components/CardCollection";
 import Footer from "./components/Footer";
+import FoodCards from "./components/FoodCards";
 
 function App() {
   return (
@@ -30,20 +31,9 @@ function App() {
               geographical entity.
             </p>
           </div>
-          <div className="poster">
-            <img
-              src="https://www.incredibleindia.org/content/dam/incredible-india-v2/images/banner/Monsoon-campaign_website-banner.jpg"
-              alt=""
-            />
-          </div>
-          <p className="popular"> Popular In India</p>
-          <p className="text">
-            India is a home to the finest architectural heritage, serene ghats,
-            spectacular landscapes and largest tiger reserve
-          </p>
+        
         </div>
       </div>
-      <div id="page3"></div>
       <div id="page4">
         <div className="container">
           <div className="poster">
@@ -63,6 +53,13 @@ function App() {
           </div>
           <div className="poster">
             <img src="https://www.incredibleindia.org/content/dam/incredible-india-v2/images/banner/wedinindia.png" />
+          </div>
+          <p className="popular">Eat's With Us</p>
+          <p className="text">
+          As you travel through the country, Taste our diverse and tasty foods.
+        </p>
+          <div className="Food-cards">
+            <FoodCards />
           </div>
         </div>
       </div>
