@@ -2,9 +2,11 @@ import React from "react";
 import "../styles/CityPages.css";
 import { useLocation } from 'react-router-dom'; // Import useLocation to access passed data
 
+// import {banner} from '../assets/images/banner-2.png'
 import DelhiFoodCard from "./DelhiFoodCard";
 import DelhiPlaceCard from "./DelhiPlaceCard";
 import DelhiCraftCard from "./DelhiCraftCard";
+
 import Footer from "./Footer";
 
 function CityPage() {
@@ -60,10 +62,10 @@ function CityPage() {
       <div className="page3">
         {/* there be a promotion banner of delhi best resturant for tourist */}
         <div className="poster">
-                  <img
-                    src="https://www.incredibleindia.org/content/dam/incredible-india-v2/images/banner/Dekho-Apna-Desh-website-banner-1.png"
-                    alt=""
-                  />
+                  {/* <img
+                    // src={banner}
+                    alt="banner"
+                  /> */}
                 </div>
 
         <p className="popular">Best Place to Visit</p>

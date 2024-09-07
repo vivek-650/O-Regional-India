@@ -1,0 +1,49 @@
+.model{
+    display:hidden; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.model-box{
+    margin-top: -12%;
+    margin-left: -10%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+}
+.close-btn{
+    place-self:end;
+    color: white;
+    background:transparent;
+}
+.container{
+    padding: 1% 10%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 20vh;
+    gap: 10rem;
+}
+.container img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    top: 10%;
+    width: 30vw;
+    height: 40vh;
+}

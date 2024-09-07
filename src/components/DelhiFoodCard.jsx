@@ -5,10 +5,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { Heart } from 'lucide-react';
+import PopUp from "./PopUp";
 
 function DelhiFoodCard() {
   const [postVisibility, setPostVisibility] = useState({});
   const swiperRef = useRef(null);
+
+  const [showPopUp, setShowPopUp] = useState(false);
 
   useEffect(() => {
     // Initialize Swiper
@@ -74,62 +78,24 @@ function DelhiFoodCard() {
           <div className="swiper-wrapper">
             {/* Slide 1 */}
             <div className="swiper-slide post">
-              <img
+              <img 
                 className="post-img"
                 src="https://media.vogue.in/wp-content/uploads/2020/08/chole-bhature-recipe.jpg"
-                alt="recipe"
+                alt="recipe" 
               />
               <div className="post-body">
-                <img
-                  className="post-avatar"
-                  src="https://www.clipartmax.com/png/middle/166-1667680_face-savoring-food-icon-tasty-emoji.png"
-                  alt="avatar"
-                />
+                
                 <div className="post-detail">
-                  <h2 className="post-name">Chole Bhatue</h2>
+                  <h3 className="post-name" onClick={() => setShowPopUp(true)}>Chole Bhature</h3>
                  
                 </div>
-                <div className="post-actions">
-                  <button className="post-like" onClick={handleLikeClick}>
-                    <i className="fas fa-heart"></i>
-                  </button>
-                  <button
-                    className="post-actions-controller"
-                    onClick={() => togglePostActions(1)}
-                    aria-expanded={postVisibility[1] ? "true" : "false"}
-                  >
-                    <i className="fa-solid fa-ellipsis fa-2xl"></i>
-                  </button>
-                  <div
-                    className={`post-actions-content ${postVisibility[1] ? "visible" : ""}`}
-                    data-visible={postVisibility[1] ? "true" : "false"}
-                    aria-hidden={postVisibility[1] ? "false" : "true"}
-                  >
-                    <ul role="list" className="grid-flow" data-spacing="small">
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-folder-open"></i>
-                          <span>Add to Collection</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-eye"></i>
-                          <span>Show the Recipe</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-user-plus"></i>
-                          <span>Follow the User</span>
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                
+                    
+                  
+                
               </div>
             </div>
-
+            {showPopUp && <PopUp onclose={() => setShowPopUp(false)}/>} 
             {/* Slide 2 */}
             <div className="swiper-slide post">
               <img
@@ -138,55 +104,15 @@ function DelhiFoodCard() {
                 alt="recipe"
               />
               <div className="post-body">
-                <img
-                  className="post-avatar"
-                  src="https://www.clipartmax.com/png/middle/166-1667680_face-savoring-food-icon-tasty-emoji.png"
-                  alt="avatar"
-                />
+            
                 <div className="post-detail">
-                  <h2 className="post-name">Chole Kulche</h2>
+                  <h2 className="post-name" onClick={() => setShowPopUp(true)}>Chole Kulche</h2>
                  
                 </div>
-                <div className="post-actions">
-                  <button className="post-like" onClick={handleLikeClick}>
-                    <i className="fas fa-heart"></i>
-                  </button>
-                  <button
-                    className="post-actions-controller"
-                    onClick={() => togglePostActions(2)}
-                    aria-expanded={postVisibility[2] ? "true" : "false"}
-                  >
-                    <i className="fa-solid fa-ellipsis fa-2xl"></i>
-                  </button>
-                  <div
-                    className={`post-actions-content ${postVisibility[2] ? "visible" : ""}`}
-                    data-visible={postVisibility[2] ? "true" : "false"}
-                    aria-hidden={postVisibility[2] ? "false" : "true"}
-                  >
-                    <ul role="list" className="grid-flow" data-spacing="small">
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-folder-open"></i>
-                          <span>Add to Collection</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-eye"></i>
-                          <span>Show the Recipe</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-user-plus"></i>
-                          <span>Follow the User</span>
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+               
               </div>
             </div>
+            {showPopUp && <PopUp onclose={() => setShowPopUp(false)}/>} 
 {/* fake one slide */}
 
 <div className="swiper-slide post">
@@ -196,53 +122,12 @@ function DelhiFoodCard() {
                 alt="recipe"
               />
               <div className="post-body">
-                <img
-                  className="post-avatar"
-                  src="https://static-00.iconduck.com/assets.00/woozy-face-emoji-1024x1024-nawnlcy1.png"
-                  alt="avatar"
-                />
+               
                 <div className="post-detail">
                   <h2 className="post-name">Gol Gappa</h2>
                  
                 </div>
-                <div className="post-actions">
-                  <button className="post-like" onClick={handleLikeClick}>
-                    <i className="fas fa-heart"></i>
-                  </button>
-                  <button
-                    className="post-actions-controller"
-                    onClick={() => togglePostActions(2)}
-                    aria-expanded={postVisibility[2] ? "true" : "false"}
-                  >
-                    <i className="fa-solid fa-ellipsis fa-2xl"></i>
-                  </button>
-                  <div
-                    className={`post-actions-content ${postVisibility[2] ? "visible" : ""}`}
-                    data-visible={postVisibility[2] ? "true" : "false"}
-                    aria-hidden={postVisibility[2] ? "false" : "true"}
-                  >
-                    <ul role="list" className="grid-flow" data-spacing="small">
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-folder-open"></i>
-                          <span>Add to Collection</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-eye"></i>
-                          <span>Show the Recipe</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-user-plus"></i>
-                          <span>Follow the User</span>
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                
               </div>
             </div>
 
@@ -253,53 +138,12 @@ function DelhiFoodCard() {
                 alt="recipe"
               />
               <div className="post-body">
-                <img
-                  className="post-avatar"
-                  src="https://i.pinimg.com/originals/bb/4c/08/bb4c08598bff95d8d4a594c92a719e37.jpg"
-                  alt="avatar"
-                />
+                
                 <div className="post-detail">
                   <h2 className="post-name">Kachori</h2>
             
                 </div>
-                <div className="post-actions">
-                  <button className="post-like" onClick={handleLikeClick}>
-                    <i className="fas fa-heart"></i>
-                  </button>
-                  <button
-                    className="post-actions-controller"
-                    onClick={() => togglePostActions(2)}
-                    aria-expanded={postVisibility[2] ? "true" : "false"}
-                  >
-                    <i className="fa-solid fa-ellipsis fa-2xl"></i>
-                  </button>
-                  <div
-                    className={`post-actions-content ${postVisibility[2] ? "visible" : ""}`}
-                    data-visible={postVisibility[2] ? "true" : "false"}
-                    aria-hidden={postVisibility[2] ? "false" : "true"}
-                  >
-                    <ul role="list" className="grid-flow" data-spacing="small">
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-folder-open"></i>
-                          <span>Add to Collection</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-eye"></i>
-                          <span>Show the Recipe</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-user-plus"></i>
-                          <span>Follow the User</span>
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                
               </div>
             </div>
 
@@ -311,53 +155,12 @@ function DelhiFoodCard() {
                 alt="recipe"
               />
               <div className="post-body">
-                <img
-                  className="post-avatar"
-                  src="https://www.clipartmax.com/png/middle/166-1667680_face-savoring-food-icon-tasty-emoji.png"
-                  alt="avatar"
-                />
+                
                 <div className="post-detail">
                   <h2 className="post-name">Kulfi</h2>
                  
                 </div>
-                <div className="post-actions">
-                  <button className="post-like" onClick={handleLikeClick}>
-                    <i className="fas fa-heart"></i>
-                  </button>
-                  <button
-                    className="post-actions-controller"
-                    onClick={() => togglePostActions(3)}
-                    aria-expanded={postVisibility[3] ? "true" : "false"}
-                  >
-                    <i className="fa-solid fa-ellipsis fa-2xl"></i>
-                  </button>
-                  <div
-                    className={`post-actions-content ${postVisibility[3] ? "visible" : ""}`}
-                    data-visible={postVisibility[3] ? "true" : "false"}
-                    aria-hidden={postVisibility[3] ? "false" : "true"}
-                  >
-                    <ul role="list" className="grid-flow" data-spacing="small">
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-folder-open"></i>
-                          <span>Add to Collection</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-eye"></i>
-                          <span>Show the Recipe</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-user-plus"></i>
-                          <span>Follow the User</span>
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                
               </div>
             </div>
 

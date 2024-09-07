@@ -80,53 +80,12 @@ function DelhiFoodCard() {
                 alt="recipe"
               />
               <div className="post-body">
-                <img
-                  className="post-avatar"
-                  src="https://static.vecteezy.com/system/resources/previews/010/171/341/original/emoji-feel-special-surprise-file-png.png"
-                  alt="avatar"
-                />
+                
                 <div className="post-detail">
                   <h2 className="post-name">Meenakari Jewelry</h2>
                  
                 </div>
-                <div className="post-actions">
-                  <button className="post-like" onClick={handleLikeClick}>
-                    <i className="fas fa-heart"></i>
-                  </button>
-                  <button
-                    className="post-actions-controller"
-                    onClick={() => togglePostActions(1)}
-                    aria-expanded={postVisibility[1] ? "true" : "false"}
-                  >
-                    <i className="fa-solid fa-ellipsis fa-2xl"></i>
-                  </button>
-                  <div
-                    className={`post-actions-content ${postVisibility[1] ? "visible" : ""}`}
-                    data-visible={postVisibility[1] ? "true" : "false"}
-                    aria-hidden={postVisibility[1] ? "false" : "true"}
-                  >
-                    <ul role="list" className="grid-flow" data-spacing="small">
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-folder-open"></i>
-                          <span>Add to Collection</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-eye"></i>
-                          <span>Show the Recipe</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-user-plus"></i>
-                          <span>Follow the User</span>
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                
               </div>
             </div>
 
@@ -138,53 +97,12 @@ function DelhiFoodCard() {
                 alt="recipe"
               />
               <div className="post-body">
-                <img
-                  className="post-avatar"
-                  src="https://png.pngtree.com/png-vector/20240618/ourmid/pngtree-3d-yellow-colour-wow-surprise-cute-emoji-png-image_12796488.png"
-                  alt="avatar"
-                />
+                
                 <div className="post-detail">
                   <h2 className="post-name">Phulkari Embroidery</h2>
                  
                 </div>
-                <div className="post-actions">
-                  <button className="post-like" onClick={handleLikeClick}>
-                    <i className="fas fa-heart"></i>
-                  </button>
-                  <button
-                    className="post-actions-controller"
-                    onClick={() => togglePostActions(2)}
-                    aria-expanded={postVisibility[2] ? "true" : "false"}
-                  >
-                    <i className="fa-solid fa-ellipsis fa-2xl"></i>
-                  </button>
-                  <div
-                    className={`post-actions-content ${postVisibility[2] ? "visible" : ""}`}
-                    data-visible={postVisibility[2] ? "true" : "false"}
-                    aria-hidden={postVisibility[2] ? "false" : "true"}
-                  >
-                    <ul role="list" className="grid-flow" data-spacing="small">
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-folder-open"></i>
-                          <span>Add to Collection</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-eye"></i>
-                          <span>Show the Recipe</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-user-plus"></i>
-                          <span>Follow the User</span>
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                
               </div>
             </div>
 {/* fake one slide */}
@@ -196,53 +114,12 @@ function DelhiFoodCard() {
                 alt="recipe"
               />
               <div className="post-body">
-                <img
-                  className="post-avatar"
-                  src="https://png.pngtree.com/png-vector/20240618/ourmid/pngtree-3d-yellow-colour-wow-surprise-cute-emoji-png-image_12796488.png"
-                  alt="avatar"
-                />
+                
                 <div className="post-detail">
                   <h2 className="post-name">Blue Pottery</h2>
                  
                 </div>
-                <div className="post-actions">
-                  <button className="post-like" onClick={handleLikeClick}>
-                    <i className="fas fa-heart"></i>
-                  </button>
-                  <button
-                    className="post-actions-controller"
-                    onClick={() => togglePostActions(2)}
-                    aria-expanded={postVisibility[2] ? "true" : "false"}
-                  >
-                    <i className="fa-solid fa-ellipsis fa-2xl"></i>
-                  </button>
-                  <div
-                    className={`post-actions-content ${postVisibility[2] ? "visible" : ""}`}
-                    data-visible={postVisibility[2] ? "true" : "false"}
-                    aria-hidden={postVisibility[2] ? "false" : "true"}
-                  >
-                    <ul role="list" className="grid-flow" data-spacing="small">
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-folder-open"></i>
-                          <span>Add to Collection</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-eye"></i>
-                          <span>Show the Recipe</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-user-plus"></i>
-                          <span>Follow the User</span>
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                
               </div>
             </div>
 
@@ -253,53 +130,12 @@ function DelhiFoodCard() {
                 alt="recipe"
               />
               <div className="post-body">
-                <img
-                  className="post-avatar"
-                  src="https://static.vecteezy.com/system/resources/previews/010/171/341/original/emoji-feel-special-surprise-file-png.png"
-                  alt="avatar"
-                />
+                
                 <div className="post-detail">
                   <h2 className="post-name">Chikan Work</h2>
             
                 </div>
-                <div className="post-actions">
-                  <button className="post-like" onClick={handleLikeClick}>
-                    <i className="fas fa-heart"></i>
-                  </button>
-                  <button
-                    className="post-actions-controller"
-                    onClick={() => togglePostActions(2)}
-                    aria-expanded={postVisibility[2] ? "true" : "false"}
-                  >
-                    <i className="fa-solid fa-ellipsis fa-2xl"></i>
-                  </button>
-                  <div
-                    className={`post-actions-content ${postVisibility[2] ? "visible" : ""}`}
-                    data-visible={postVisibility[2] ? "true" : "false"}
-                    aria-hidden={postVisibility[2] ? "false" : "true"}
-                  >
-                    <ul role="list" className="grid-flow" data-spacing="small">
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-folder-open"></i>
-                          <span>Add to Collection</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-eye"></i>
-                          <span>Show the Recipe</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-user-plus"></i>
-                          <span>Follow the User</span>
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                
               </div>
             </div>
 
@@ -311,53 +147,12 @@ function DelhiFoodCard() {
                 alt="recipe"
               />
               <div className="post-body">
-                <img
-                  className="post-avatar"
-                  src="https://www.clipartbest.com/cliparts/KTj/pzM/KTjpzMGbc.jpg"
-                  alt="avatar"
-                />
+                
                 <div className="post-detail">
                   <h2 className="post-name">Wood Carvings</h2>
                  
                 </div>
-                <div className="post-actions">
-                  <button className="post-like" onClick={handleLikeClick}>
-                    <i className="fas fa-heart"></i>
-                  </button>
-                  <button
-                    className="post-actions-controller"
-                    onClick={() => togglePostActions(3)}
-                    aria-expanded={postVisibility[3] ? "true" : "false"}
-                  >
-                    <i className="fa-solid fa-ellipsis fa-2xl"></i>
-                  </button>
-                  <div
-                    className={`post-actions-content ${postVisibility[3] ? "visible" : ""}`}
-                    data-visible={postVisibility[3] ? "true" : "false"}
-                    aria-hidden={postVisibility[3] ? "false" : "true"}
-                  >
-                    <ul role="list" className="grid-flow" data-spacing="small">
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-folder-open"></i>
-                          <span>Add to Collection</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-eye"></i>
-                          <span>Show the Recipe</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button className="post-actions-link">
-                          <i className="fa-solid fa-user-plus"></i>
-                          <span>Follow the User</span>
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                
               </div>
             </div>
 
