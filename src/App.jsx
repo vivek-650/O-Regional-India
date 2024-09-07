@@ -51,12 +51,12 @@ function App() {
             </div>
             <div id="page4">
               <div className="container">
-                <div className="poster">
+                {/* <div className="poster">
                   <img
                     src="https://www.incredibleindia.org/content/dam/incredible-india-v2/images/banner/Dekho-Apna-Desh-website-banner-1.png"
                     alt=""
                   />
-                </div>
+                </div> */}
                 <p className="popular">Must Visit Destinations</p>
                 <p className="text">
                   From historical cities to natural splendours, come see the best of
@@ -65,9 +65,9 @@ function App() {
                 <div className="Destination-cards">
                   <DestinationCards />
                 </div>
-                <div className="poster">
+                {/* <div className="poster">
                   <img src="https://www.incredibleindia.org/content/dam/incredible-india-v2/images/banner/wedinindia.png" />
-                </div>
+                </div> */}
                 <p className="popular">Eats With Us</p>
                 <p className="text">
                   As you travel through the country, Taste our diverse and tasty foods.
