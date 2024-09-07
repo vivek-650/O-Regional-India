@@ -13,40 +13,36 @@ function CityPage() {
 
   const location = useLocation(); // Get the passed state from navigation
   const { cityData } = location.state || {}; // Get cityData or default to null
-  // console.log("from cityPage",cityData)
+  console.log("from cityPage",cityData)
 
   return (
     <div className="main">
       <div className="navbar">
-        <div className="logo">Logo</div>
+        {/* <div className="logo">Logo</div> */}
         {cityData ? (
         <div>
-          <h1>{cityData.cityName}</h1>
+          {/* <h1>{cityData.cityName}</h1> */}
           
           {/* You can add more details here based on the data structure */}
         </div>
       ) : (
         <p>No data for the given city</p> // Show message if no city data is present
       )}
-        <h1 className="Header">I love Delhi</h1>
-        <div className="search">search</div>
+        {/* <h1 className="Header">I love Delhi</h1> */}
+        {/* <div className="search">search</div> */}
       </div>
 
       <div className="video-container">
         <img
-          src="https://images.pexels.com/photos/13759774/pexels-photo-13759774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          src={cityData.famousPlaces[1].images}
           alt=""
         />
+        <h1>{cityData.cityName}</h1>
       </div>
       <div className="page2">
         <div className="hidden-text">
           <p>
-            Delhi, a captivating fusion of history and modernity, offers iconic
-            landmarks, vibrant bazaars, and mouth-watering street food. Its
-            majestic forts, serene gardens, and colorful festivals create a rich
-            cultural tapestry. From ancient heritage to contemporary charm,
-            Delhi promises an unforgettable and enriching journey for every
-            traveler.
+            {cityData.description}
           </p>
         </div>
         {/* //famous place in Delhi */}
@@ -75,7 +71,7 @@ function CityPage() {
           </p>
         </div>
         {/* There gonna be a cards component for best places */}
-        <DelhiPlaceCard />
+        <DelhiFoodCard />
       </div>
       <div className="page4">
 
@@ -86,7 +82,7 @@ function CityPage() {
           </p>
         </div>
         {/* There gonna be a cards component for Delhi authentic merchendise */}
-        <DelhiCraftCard />
+        <DelhiFoodCard />
       </div>
       <Footer />
     </div>

@@ -3,6 +3,7 @@
   import logo from '../assets/images/logo_crop.png';
   import '../styles/Nav.css';
   import SearchPage from './SearchPage';
+  import Login from './Login';
 
   const Nav = () => {
     const [isSearchVisible, setIsSearchVisible] = useState(false);
@@ -14,9 +15,9 @@
     return (
       <div className="nav-bar">
         <div className="nav1">
-          <li>Nav-link-1 ▾</li>
-          <li>Nav-link-2 ▾</li>
-          <li>Nav-link-3 ▾</li>
+          <li>Experiences ▾</li>
+          <li>Explore ▾</li>
+          <li>Travel ▾</li>
         </div>
         <Link to="/"><img src={logo} alt="logo" id='logo'/></Link>
         
@@ -24,7 +25,8 @@
           <button onClick={toggleSearch}>
             <i className="ri-search-2-line"></i>
           </button>
-          <i className="ri-login-box-line"></i>
+          <Login></Login>
+          {/* <i className="ri-login-box-line"></i> */}
         </div>
         {isSearchVisible && <SearchPage onClose={toggleSearch} />}
       </div>

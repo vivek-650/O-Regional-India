@@ -12,8 +12,9 @@ html, body{
     height: 10vh;
     background-color: rgba(255, 255, 255, 0.849);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 1rem 6%;
 }
 .nav1,.nav2,.nav3 {
     width: 33%;
@@ -25,7 +26,7 @@ html, body{
     justify-content: start;
     align-items: center;
     gap: 2em;
-    padding: 0  0 0 3rem ;
+    /* padding: 0  0 0 5rem ; */
 }
 .nav1 li{
     list-style: none;
@@ -38,7 +39,7 @@ html, body{
     display: flex;
     justify-content: end;
     align-items: center;
-    padding: 0 3rem;
+    /* padding: 0 3rem; */
     gap: 10px;
 }
 .nav3 button{
