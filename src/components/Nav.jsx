@@ -15,9 +15,9 @@
     return (
       <div className="nav-bar">
         <div className="nav1">
-          <li>Nav-link-1 ▾</li>
-          <li>Nav-link-2 ▾</li>
-          <li>Nav-link-3 ▾</li>
+          <li>Experiences ▾</li>
+          <li>Explore ▾</li>
+          <li>Travel ▾</li>
         </div>
         <Link to="/"><img src={logo} alt="logo" id='logo'/></Link>
         
