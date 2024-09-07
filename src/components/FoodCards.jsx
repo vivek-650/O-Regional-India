@@ -29,7 +29,7 @@ function FoodCards() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="contain">
       <div className="main-slider">
         <div className="label-container">
           {/* Additional controls like arrows can go here */}

@@ -33,7 +33,7 @@ function App() {
                 <video src={video} autoPlay muted loop id="video"></video>
             </div>
             <div id="page2">
-              <div className="container">
+              <div className="contain">
                 <div className="hidden-text">
                   <p>
                     One of the oldest civilisations in the world, India is a mosaic of
@@ -50,7 +50,7 @@ function App() {
               </div>
             </div>
             <div id="page4">
-              <div className="container">
+              <div className="contain">
                 {/* <div className="poster">
                   <img
                     src="https://www.incredibleindia.org/content/dam/incredible-india-v2/images/banner/Dekho-Apna-Desh-website-banner-1.png"
@@ -78,7 +78,7 @@ function App() {
               </div>
             </div>
             <div id="page5">
-              <div className="container">
+              <div className="contain">
                 <p className="popular">Immersive Experiences</p>
                 <p className="text">
                   In the land of opulence, let loose and discover yourself
