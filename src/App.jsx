@@ -31,6 +31,7 @@ function App() {
           <>
             <div id="page1">
                 <video src={video} autoPlay muted loop id="video"></video>
+                  <p>"Regional India is Original India"</p>
             </div>
             <div id="page2">
               <div className="contain">

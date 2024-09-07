@@ -18,12 +18,22 @@ html, body{
     /* padding: 0 3rem; */
     display: flex;
     justify-content: center;
+    position: relative;
+}
+
+#page1>p{
+    position: absolute;
+    top: 40%;
+    color: rgba(255, 255, 255, 0.77);
+    font-size: 2rem;
+    font-weight: 600;
 }
 #video{
     /* width: 80vw; */
     height: 80vh;   
     margin: 1rem 0 0 0rem;
     border-radius: 5px;
+    filter: brightness(70%);
 }
 
 #page2{
