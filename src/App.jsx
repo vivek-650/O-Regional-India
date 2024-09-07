@@ -10,6 +10,7 @@ import SearchPage from "./components/SearchPage"; // Import the SearchPage compo
 import CityPage from "./components/CityPage"; // Import a CityPage to show city-specific details
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Import Router components
+
 import { useState } from "react";
 
 function App() {
