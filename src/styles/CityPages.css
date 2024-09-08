@@ -97,31 +97,33 @@ html,body{
     display: flex;
     align-items: center;
     justify-content: end;
-    position: absolute;
+    /* position: absolute; */
     right: 0%;
-    top: 10%;
+    top: 80%;
     cursor: pointer;
-    /* position: fixed; */
+    position: fixed;
+    z-index: 99;
 }
 .tour-PopUP h3{
     font-size: 25px;
     font-weight: 500;
     color: #fff;
-    background: royalblue;
+    background: rgba(65, 105, 225, 0.813);
     padding: 1rem;
     border-radius: 20px 0 0px 20px;
 }
 .Hotels-PopUP{
     width: 18rem;
+    z-index: 99;
     display: flex;
     align-items: center;
     justify-content: end;
-    position: absolute;
+    /* position: absolute; */
     right: 0%;
-    top: 0%;
+    top: 70%;
     /* background: #17406c; */
     cursor: pointer;
-    /* position: fixed; */
+    position: fixed;
 }
 .Hotels-PopUP h3{
     font-size: 25px;

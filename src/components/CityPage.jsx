@@ -5,8 +5,8 @@ import { useLocation } from 'react-router-dom';
 import DelhiFoodCard from "./DelhiFoodCard";
 import TourGuid from "./TourGuid";
 import HotelList from "./HotelList";
-import DelhiPlaceCard from "./DelhiPlaceCard";
-import DelhiCraftCard from "./DelhiCraftCard";
+// import DelhiPlaceCard from "./DelhiPlaceCard";
+// import DelhiCraftCard from "./DelhiCraftCard";
 
 import Footer from "./Footer";
 
@@ -48,7 +48,7 @@ function CityPage() {
             parathas, golgappas, and delicious sweets.
           </p>
         </div>
-        <DelhiFoodCard />
+        <DelhiFoodCard data={cityData.foods}/>
       </div>
 
       <div className="page3">
@@ -69,18 +69,20 @@ function CityPage() {
             gardens, and majestic architecture at every turn.
           </p>
         </div>
-        <DelhiPlaceCard /> {/* Correct component for places */}
+        <DelhiFoodCard data={cityData.famousPlaces}/> 
+        {/* Correct component for places */}
       </div>
 
       <div className="page4">
-        <p className="popular">Delhi Wali Shopping</p>
+        <p className="popular">Shop Authentic Only</p>
         <div className="hidden-text">
           <p>
             Delhi has a wide range of handcrafted treasures including intricate
             jewelry, vibrant textiles, and more.
           </p>
         </div>
-        <DelhiCraftCard /> {/* Correct component for crafts */}
+        <DelhiFoodCard data={cityData.handicrafts}/> 
+        {/* Correct component for crafts */}
       </div>
 
       <Footer />
