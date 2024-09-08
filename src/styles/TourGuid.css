@@ -1,24 +1,28 @@
-.model-conatiner {
+.tour-conatiner {
     display: none; 
     position: fixed; 
-    z-index: 1;
+    z-index: 999;
     padding: 0; /* Remove any extra padding */
     margin: 0; /* Reset any margins */
     left: 0;
     top: 0;
-    width: 25vw;
-    height: 65%;
+    width: 85vw;
+    height: 85%;
     overflow: auto;
     background-color: rgba(12, 13, 14, 0.747);
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-left: 65%; 
+    margin-top: 10vh;
+    margin-left: 7.5vw; 
 }
 
 
 .model-box {
+    margin-top: 5%;
+    width: 100vw;
+    /* background: blue; */
     display: flex;
     flex-direction: column;
     color: white;
@@ -29,7 +33,7 @@
 
 .close-btn {
     position: absolute;
-    top: 0; /* Position the button at the top */
+    top: -10%; /* Position the button at the top */
     right:10px; /* Align it to the right */
     color: white;
     background: transparent;
@@ -42,9 +46,11 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    /* background: red; */
     width: 100%; /* Use width and height appropriately */
     gap: 1rem;
     padding-left: 2rem;
+    /* text-align: center; */
 }
 .text-container h3{
     font-weight: 500;
