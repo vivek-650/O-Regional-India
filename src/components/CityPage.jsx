@@ -13,7 +13,7 @@ function CityPage() {
 
   const location = useLocation(); // Get the passed state from navigation
   const { cityData } = location.state || {}; // Get cityData or default to null
-  console.log("from cityPage",cityData)
+  // console.log("from cityPage",cityData)
 
   return (
     <div className="main">

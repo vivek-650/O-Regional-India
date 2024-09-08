@@ -1,6 +1,7 @@
 import '../styles/SearchPage.css';
 import PropTypes from 'prop-types';
-import { getCityData } from '../services/operations/cityAPI';
+// import { getCityData } from '../services/operations/cityAPI';
+import { getCityData } from '../services/operations/cityFire';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
@@ -15,7 +16,8 @@ const SearchPage = ({ onClose }) => {
       setIsLoading(true); // Start loading
       try {
         const response = await getCityData(cityName);
-        const citiesList = response.data.cityData;
+        // const citiesList = response.data.cityData;
+        const citiesList = response;
 
         // Check if city data exists, and navigate accordingly
         if (citiesList) {
