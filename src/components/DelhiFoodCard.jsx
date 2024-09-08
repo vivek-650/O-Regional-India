@@ -5,7 +5,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { Heart } from 'lucide-react';
 import PopUp from "./PopUp";
 
 function DelhiFoodCard() {
