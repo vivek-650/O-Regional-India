@@ -1,89 +1,90 @@
-import React from "react";
+import React, { useState } from "react"; // Added useState
 import "../styles/CityPages.css";
-import { useLocation } from 'react-router-dom'; // Import useLocation to access passed data
+import { useLocation } from 'react-router-dom';
 
-// import {banner} from '../assets/images/banner-2.png'
 import DelhiFoodCard from "./DelhiFoodCard";
-import DelhiPlaceCard from "./DelhiPlaceCard";
-import DelhiCraftCard from "./DelhiCraftCard";
+import TourGuid from "./TourGuid";
+import HotelList from "./HotelList";
+// import DelhiPlaceCard from "./DelhiPlaceCard";
+// import DelhiCraftCard from "./DelhiCraftCard";
 
 import Footer from "./Footer";
 
 function CityPage() {
-
-  const location = useLocation(); // Get the passed state from navigation
-  const { cityData } = location.state || {}; // Get cityData or default to null
-  // console.log("from cityPage",cityData)
+  const [showPopUp, setShowPopUp] = useState(false);
+  const [showHotelList, setHotelList] = useState(false);
+  const location = useLocation(); 
+  const { cityData } = location.state || {}; 
+  console.log("from cityPage", cityData);
 
   return (
     <div className="main">
       <div className="navbar">
-        {/* <div className="logo">Logo</div> */}
         {cityData ? (
-        <div>
-          {/* <h1>{cityData.cityName}</h1> */}
-          
-          {/* You can add more details here based on the data structure */}
-        </div>
-      ) : (
-        <p>No data for the given city</p> // Show message if no city data is present
-      )}
-        {/* <h1 className="Header">I love Delhi</h1> */}
-        {/* <div className="search">search</div> */}
+          <div>
+            {/* <h1>{cityData.cityName}</h1> */}
+          </div>
+        ) : (
+          <p>No data for the given city</p>
+        )}
       </div>
 
       <div className="video-container">
         <img
-          src={cityData.famousPlaces[1].images}
-          alt=""
+          src={cityData?.famousPlaces?.[1]?.images}
+          alt="Famous Place"
         />
-        <h1>{cityData.cityName}</h1>
+        <h1>{cityData?.cityName}</h1>
       </div>
+
       <div className="page2">
         <div className="hidden-text">
-          <p>
-            {cityData.description}
-          </p>
+          <p>{cityData?.description}</p>
         </div>
-        {/* //famous place in Delhi */}
         <p className="popular">Best Food For You Only</p>
         <div className="hidden-text">
           <p>
-          Delhi street food offers bold, flavorful delights like chaat, kebabs, parathas, golgappas, and delicious sweets.
+            Delhi street food offers bold, flavorful delights like chaat, kebabs,
+            parathas, golgappas, and delicious sweets.
           </p>
         </div>
-        <DelhiFoodCard />
+        <DelhiFoodCard data={cityData.foods}/>
       </div>
 
       <div className="page3">
-        {/* there be a promotion banner of delhi best resturant for tourist */}
-        <div className="poster">
-                  {/* <img
-                    // src={banner}
-                    alt="banner"
-                  /> */}
-                </div>
+        <div className="poster"></div>
+        {showPopUp && <TourGuid onclose={() => setShowPopUp(false)} />}
+        {showHotelList && <HotelList onclose={() => setHotelList(false)} />}
+        <div className="tour-PopUP">
+          <h3 onClick={() => setShowPopUp(true)}>Need Tour Guide?</h3>
+        </div>
+        <div className="Hotels-PopUP">
+          <h3 onClick={() => setHotelList(true)}>Need Hotels?</h3>
+        </div>
 
-        <p className="popular">Best Place to Visit</p>
+        <p className="popular">Best Places to Visit</p>
         <div className="hidden-text">
           <p>
-          Delhi's shines through historic landmarks, vibrant markets, serene gardens, and majestic architecture at every turn.
+            Delhi's shines through historic landmarks, vibrant markets, serene
+            gardens, and majestic architecture at every turn.
           </p>
         </div>
-        {/* There gonna be a cards component for best places */}
-        <DelhiFoodCard />
+        <DelhiFoodCard data={cityData.famousPlaces}/> 
+        {/* Correct component for places */}
       </div>
+
       <div className="page4">
-
-        <p className="popular">Delhi Wali Shopping</p>
+        <p className="popular">Shop Authentic Only</p>
         <div className="hidden-text">
           <p>
-          Delhi's has wide range of handcrafted treasures include intricate jewelry, vibrant textiles and many more.
+            Delhi has a wide range of handcrafted treasures including intricate
+            jewelry, vibrant textiles, and more.
           </p>
         </div>
-        {/* There gonna be a cards component for Delhi authentic merchendise */}
-        <DelhiFoodCard />
+        <DelhiFoodCard data={cityData.handicrafts}/> 
+        {/* Correct component for crafts */}
       </div>
+
       <Footer />
     </div>
   );

@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import Swiper from "swiper";
-import '../styles/DelhiFoodCard.css';
+import "../styles/DelhiFoodCard.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { Heart } from 'lucide-react';
 import PopUp from "./PopUp";
 
-function DelhiFoodCard() {
+function DelhiFoodCard(props) {
+  console.log(props, "is comming");
   const [postVisibility, setPostVisibility] = useState({});
   const swiperRef = useRef(null);
 
@@ -42,14 +42,19 @@ function DelhiFoodCard() {
 
     // Handle click outside to close post actions
     function handleClickOutside(event) {
-      document.querySelectorAll(".post-actions-content").forEach((content, index) => {
-        if (content.getAttribute("data-visible") === "true" && !content.contains(event.target)) {
-          setPostVisibility((prevState) => ({
-            ...prevState,
-            [index]: false,
-          }));
-        }
-      });
+      document
+        .querySelectorAll(".post-actions-content")
+        .forEach((content, index) => {
+          if (
+            content.getAttribute("data-visible") === "true" &&
+            !content.contains(event.target)
+          ) {
+            setPostVisibility((prevState) => ({
+              ...prevState,
+              [index]: false,
+            }));
+          }
+        });
     }
 
     document.addEventListener("click", handleClickOutside);
@@ -69,34 +74,46 @@ function DelhiFoodCard() {
   const handleLikeClick = (event) => {
     event.currentTarget.classList.toggle("active");
   };
-
+  const foodData = props.data;
+  console.log("gettibg ==", foodData);
   return (
     <div>
       <div className="recipe-container">
-      
         <div className="swiper">
           <div className="swiper-wrapper">
-            {/* Slide 1 */}
-            <div className="swiper-slide post">
-              <img 
+            {foodData.map((obj) => (
+              <div className="swiper-slide post">
+              <img
                 className="post-img"
-                src="https://media.vogue.in/wp-content/uploads/2020/08/chole-bhature-recipe.jpg"
-                alt="recipe" 
+                src={obj.images}
+                alt="recipe"
               />
               <div className="post-body">
-                
                 <div className="post-detail">
-                  <h3 className="post-name" onClick={() => setShowPopUp(true)}>Chole Bhature</h3>
-                 
+                  <h2 className="post-name" onClick={() => setShowPopUp(true)}>
+                    {obj.name}
+                  </h2>
                 </div>
-                
-                    
-                  
-                
               </div>
             </div>
-            {showPopUp && <PopUp onclose={() => setShowPopUp(false)}/>} 
-            {/* Slide 2 */}
+            // {showPopUp && <PopUp onclose={() => setShowPopUp(false)} />}}              
+            ))}
+            {/* <div className="swiper-slide post">
+              <img
+                className="post-img"
+                src="https://media.vogue.in/wp-content/uploads/2020/08/chole-bhature-recipe.jpg"
+                alt="recipe"
+              />
+              <div className="post-body">
+                <div className="post-detail">
+                  <h3 className="post-name" onClick={() => setShowPopUp(true)}>
+                    Chole Bhature
+                  </h3>
+                </div>
+              </div>
+            </div>
+            {showPopUp && <PopUp onclose={() => setShowPopUp(false)} />} */}
+            {/* Slide 2
             <div className="swiper-slide post">
               <img
                 className="post-img"
@@ -104,66 +121,52 @@ function DelhiFoodCard() {
                 alt="recipe"
               />
               <div className="post-body">
-            
                 <div className="post-detail">
-                  <h2 className="post-name" onClick={() => setShowPopUp(true)}>Chole Kulche</h2>
-                 
+                  <h2 className="post-name" onClick={() => setShowPopUp(true)}>
+                    Chole Kulche
+                  </h2>
                 </div>
-               
               </div>
             </div>
-            {showPopUp && <PopUp onclose={() => setShowPopUp(false)}/>} 
-{/* fake one slide */}
-
-<div className="swiper-slide post">
+            {showPopUp && <PopUp onclose={() => setShowPopUp(false)} />} */}
+            {/* fake one slide */}
+            {/* <div className="swiper-slide post">
               <img
                 className="post-img"
                 src="https://static.toiimg.com/photo/75107900.cms"
                 alt="recipe"
               />
               <div className="post-body">
-               
                 <div className="post-detail">
                   <h2 className="post-name">Gol Gappa</h2>
-                 
                 </div>
-                
               </div>
             </div>
-
             <div className="swiper-slide post">
               <img
                 className="post-img"
                 src="https://i.ytimg.com/vi/xUeb7Ve5-Zo/maxresdefault.jpg"
                 alt="recipe"
-              />
-              <div className="post-body">
-                
+              /> */}
+            {/* <div className="post-body">
                 <div className="post-detail">
                   <h2 className="post-name">Kachori</h2>
-            
                 </div>
-                
               </div>
-            </div>
-
+            </div> */}
             {/* Slide 3 */}
-            <div className="swiper-slide post">
+            {/* <div className="swiper-slide post">
               <img
                 className="post-img"
                 src="https://www.olddelhifoods.com/wp-content/uploads/2023/05/malaikulfi.jpg"
                 alt="recipe"
               />
               <div className="post-body">
-                
                 <div className="post-detail">
                   <h2 className="post-name">Kulfi</h2>
-                 
                 </div>
-                
               </div>
-            </div>
-
+            </div> */}
           </div>
           <div className="swiper-scrollbar"></div>
         </div>

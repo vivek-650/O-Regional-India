@@ -89,3 +89,47 @@ html,body{
   height: 100%;
   object-fit: cover;
 }
+.page3{
+    position: relative;
+}
+.tour-PopUP{
+    width: 18rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    /* position: absolute; */
+    right: 0%;
+    top: 80%;
+    cursor: pointer;
+    position: fixed;
+    z-index: 99;
+}
+.tour-PopUP h3{
+    font-size: 25px;
+    font-weight: 500;
+    color: #fff;
+    background: rgba(65, 105, 225, 0.813);
+    padding: 1rem;
+    border-radius: 20px 0 0px 20px;
+}
+.Hotels-PopUP{
+    width: 18rem;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    /* position: absolute; */
+    right: 0%;
+    top: 70%;
+    /* background: #17406c; */
+    cursor: pointer;
+    position: fixed;
+}
+.Hotels-PopUP h3{
+    font-size: 25px;
+    font-weight: 500;
+    color: #fff;
+    background: royalblue;
+    padding: 1rem;
+    border-radius: 20px 0 0px 20px;
+}

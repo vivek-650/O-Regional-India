@@ -1,0 +1,56 @@
+.model-conatiner {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    padding: 0; /* Remove any extra padding */
+    margin: 0; /* Reset any margins */
+    left: 0;
+    top: 0;
+    width: 25vw;
+    height: 65%;
+    overflow: auto;
+    background-color: rgba(12, 13, 14, 0.747);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: 65%; 
+}
+
+
+.model-box {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 1.5rem; /* Add padding instead of negative margins */
+    position: relative; /* Ensure proper positioning of the close button */
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0; /* Position the button at the top */
+    right:10px; /* Align it to the right */
+    color: white;
+    background: transparent;
+    border: none; /* Remove any borders */
+    cursor: pointer; /* Make it clickable */
+}
+
+.text-container {
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%; /* Use width and height appropriately */
+    gap: 1rem;
+    padding-left: 2rem;
+}
+.text-container h3{
+    font-weight: 500;
+    line-height: 2.1;
+}
+.text-container h5{
+    font-weight: 500;
+}
+
