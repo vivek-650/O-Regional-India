@@ -4,15 +4,12 @@ import { useLocation } from 'react-router-dom';
 
 import DelhiFoodCard from "./DelhiFoodCard";
 import TourGuid from "./TourGuid";
-import HotelList from "./HotelList";
-// import DelhiPlaceCard from "./DelhiPlaceCard";
-// import DelhiCraftCard from "./DelhiCraftCard";
+import DynamicDesignCard from "./DynamicDesignCard";
 
 import Footer from "./Footer";
 
 function CityPage() {
   const [showPopUp, setShowPopUp] = useState(false);
-  const [showHotelList, setHotelList] = useState(false);
   const location = useLocation(); 
   const { cityData } = location.state || {}; 
   console.log("from cityPage", cityData);
@@ -44,8 +41,7 @@ function CityPage() {
         <p className="popular">Best Food For You Only</p>
         <div className="hidden-text">
           <p>
-            Delhi street food offers bold, flavorful delights like chaat, kebabs,
-            parathas, golgappas, and delicious sweets.
+          Indulge in mouthwatering street food, bursting with authentic flavors, local spices, and unforgettable culinary delights.
           </p>
         </div>
         <DelhiFoodCard data={cityData.foods}/>
@@ -54,19 +50,18 @@ function CityPage() {
       <div className="page3">
         <div className="poster"></div>
         {showPopUp && <TourGuid onclose={() => setShowPopUp(false)} />}
-        {showHotelList && <HotelList onclose={() => setHotelList(false)} />}
+        
         <div className="tour-PopUP">
           <h3 onClick={() => setShowPopUp(true)}>Need Tour Guide?</h3>
         </div>
         <div className="Hotels-PopUP">
-          <h3 onClick={() => setHotelList(true)}>Need Hotels?</h3>
+          <h3>Need Hotels?</h3>
         </div>
 
         <p className="popular">Best Places to Visit</p>
         <div className="hidden-text">
           <p>
-            Delhi's shines through historic landmarks, vibrant markets, serene
-            gardens, and majestic architecture at every turn.
+          A breathtaking landmark, rich in history and beauty, offering unforgettable experiences and stunning architectural marvels.
           </p>
         </div>
         <DelhiFoodCard data={cityData.famousPlaces}/> 
@@ -77,12 +72,19 @@ function CityPage() {
         <p className="popular">Shop Authentic Only</p>
         <div className="hidden-text">
           <p>
-            Delhi has a wide range of handcrafted treasures including intricate
-            jewelry, vibrant textiles, and more.
+          Discover unique, handmade treasures at local markets, showcasing traditional craftsmanship and authentic cultural artistry.
           </p>
         </div>
         <DelhiFoodCard data={cityData.handicrafts}/> 
         {/* Correct component for crafts */}
+
+        <p className="popular">Local Events</p>
+        <div className="hidden-text">
+          <p>
+          Explore vibrant festivals, food markets, historical tours, art exhibitions, and live music to attract curious tourists.
+          </p>
+        </div>
+        <DelhiFoodCard data={cityData.events}/>
       </div>
 
       <Footer />

@@ -8,7 +8,7 @@ import "swiper/css/scrollbar";
 import PopUp from "./PopUp";
 
 function DelhiFoodCard(props) {
-  console.log(props, "is comming");
+  // console.log(props, "is comming");
   const [postVisibility, setPostVisibility] = useState({});
   const swiperRef = useRef(null);
 
@@ -75,7 +75,7 @@ function DelhiFoodCard(props) {
     event.currentTarget.classList.toggle("active");
   };
   const foodData = props.data;
-  console.log("gettibg ==", foodData);
+  // console.log("gettibg ==", foodData);
   return (
     <div>
       <div className="recipe-container">
