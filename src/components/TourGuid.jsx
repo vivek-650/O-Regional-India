@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import '../styles/TourGuid.css'
 import { X } from 'lucide-react';
 import TourGuidData from '../components/TourGuideData';
-import FestiveCards from './FestiveCards';
+// import FestiveCards from './FestiveCards';
 
 function TourGuid({onclose}) {
     const modalRef = useRef();
@@ -14,6 +14,7 @@ function TourGuid({onclose}) {
     }
 
   return (
+    <div className="blur-container">
     <div ref={modalRef} onClick={closeModal} className='tour-conatiner'>
         <div className='model-box'>
             <button onClick={onclose} className='close-btn'><X size={30}/></button>
@@ -23,6 +24,7 @@ function TourGuid({onclose}) {
                 </div>
                 <TourGuidData />
             
+        </div>
         </div>
         </div>
   )

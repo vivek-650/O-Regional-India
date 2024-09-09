@@ -1,4 +1,5 @@
 import React from 'react'
+import Wave from 'react-wavify'
 
 import '../styles/Footer.css';
 import logo from "../assets/images/logo_crop.png";
@@ -7,6 +8,18 @@ import logo from "../assets/images/logo_crop.png";
 function Footer() {
   return (
     <div id="footer">
+      <div className="wave">
+      <Wave fill='#17406c'
+        paused={false}
+        style={{ display: 'flex' }}
+        options={{
+          height:5,
+          amplitude: 10,
+          speed: 0.4,
+          points: 4
+        }}
+  />
+      </div>
         <h4>
           <u>State Tourism Websites</u>
         </h4>

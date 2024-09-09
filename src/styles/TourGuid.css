@@ -1,3 +1,11 @@
+.blur-container{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    background-color: rgb(0, 0, 0);
+    backdrop-filter: blur(4px);
+  }
 .tour-conatiner {
     display: none; 
     position: fixed; 
@@ -9,7 +17,7 @@
     width: 85vw;
     height: 85%;
     overflow: auto;
-    background-color: rgba(12, 13, 14, 0.747);
+    background-color: rgba(1, 0, 0, 0.833);
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -38,7 +46,8 @@
     color: white;
     background: transparent;
     border: none; /* Remove any borders */
-    cursor: pointer; /* Make it clickable */
+    cursor: pointer; 
+    margin-top: -3rem;
 }
 
 .text-container {
@@ -50,6 +59,7 @@
     width: 100%; /* Use width and height appropriately */
     gap: 1rem;
     padding-left: 2rem;
+    margin-top: -8rem;
     /* text-align: center; */
 }
 .text-container h3{
@@ -59,4 +69,3 @@
 .text-container h5{
     font-weight: 500;
 }
-

@@ -12,6 +12,7 @@ import { EffectCoverflow, Pagination, Navigation, Autoplay } from "swiper/module
 
 function TourGuidData() {
   return (
+    
     <div className="TourGuid_container">
       <Swiper
         effect={'coverflow'}
@@ -39,7 +40,7 @@ function TourGuidData() {
           <div className="upper-div">
             <img src="https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg" alt="pic" />
             <h2>Amit Deo</h2>
-            
+            <p>Rating:⭐⭐⭐⭐</p>
           </div>
           <div className="lower-div">
           <p>Location: Sitamari,Bihar</p>
@@ -47,14 +48,14 @@ function TourGuidData() {
             <p>Contact:5492729752</p>
             <p>Nationality:Indian</p>
             <br />
-            <p>Rating:⭐⭐⭐⭐</p>
+          
           </div>
         </SwiperSlide>
         <SwiperSlide className="TourGuid-cards__swiper-slide">
           <div className="upper-div">
             <img src="https://cdn.dribbble.com/users/5534/screenshots/14230133/profile_4x.jpg" alt="pic" />
             <h2>Satendra Kumar</h2>
-            
+            <p>Rating:⭐⭐⭐⭐</p>
           </div>
           <div className="lower-div">
           <p>Location: Sitamari,Bihar</p>
@@ -62,14 +63,14 @@ function TourGuidData() {
             <p>Contact:5492729752</p>
             <p>Nationality:Indian</p>
             <br />
-            <p>Rating:⭐⭐⭐⭐</p>
+            
           </div>
         </SwiperSlide>
         <SwiperSlide className="TourGuid-cards__swiper-slide">
           <div className="upper-div">
             <img src="https://cdna.artstation.com/p/assets/images/images/053/054/138/large/avetetsuya-studios-alien.jpg?1661309922" alt="pic" />
             <h2>Vivek Anand</h2>
-            
+            <p>Rating:⭐⭐⭐⭐</p>
           </div>
           <div className="lower-div">
           <p>Location:Dumka,Jharkhand</p>
@@ -77,14 +78,14 @@ function TourGuidData() {
             <p>Contact:5492729752</p>
             <p>Nationality:Indian</p>
             <br />
-            <p>Rating:⭐⭐⭐⭐</p>
+            
           </div>
         </SwiperSlide>
         <SwiperSlide className="TourGuid-cards__swiper-slide">
           <div className="upper-div">
             <img src="https://play-lh.googleusercontent.com/830wVRGpgr6whP_zJ_1kh7QpuQvCvZ7x-_qJDjYGC2JAp46rj-xOKKzBqyItO4t32WoQ" alt="pic" />
             <h2>Sitesh kumar</h2>
-            
+            <p>Rating:⭐⭐⭐⭐</p>
           </div>
           <div className="lower-div">
           <p>Location:Noida,U.P</p>
@@ -92,45 +93,44 @@ function TourGuidData() {
             <p>Contact:5492729752</p>
             <p>Nationality:Indian</p>
             <br />
-            <p>Rating:⭐⭐⭐⭐</p>
+            
           </div>
         </SwiperSlide>
         <SwiperSlide className="TourGuid-cards__swiper-slide">
           <div className="upper-div">
             <img src="https://neurolist.ru/wp-content/uploads/ai-profile-pic.png" alt="pic" />
             <h2>Jyoti Aditya</h2>
-           
+            <p>Rating:⭐⭐⭐⭐</p>
           </div>
           <div className="lower-div">
-          <p>Location: Asansol, West Bengal</p>
+          <p>Location: Asansol, W.B</p>
             <p>Languages:Hindi,English</p>
             <p>Contact:5492729752</p>
             <p>Nationality:Indian</p>
             <br />
-            <p>Rating:⭐⭐⭐⭐</p>
+            
           </div>
         </SwiperSlide>
         <SwiperSlide className="TourGuid-cards__swiper-slide">
           <div className="upper-div">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKbUlzKaMhLWPx_ynu1-ga2i50bcsVJ3rLNA&s" alt="pic" />
             <h2>Alien Sharma</h2>
-            
+            <p>Rating:⭐⭐⭐⭐⭐</p>
           </div>
           <div className="lower-div">
-          <p>Location: Mars,Solar System</p>
-            <p>Languages:Hindi,English,%$##%</p>
+          <p>Location: Mars,Solar</p>
+            <p>Languages:Hinglish,%$##%</p>
             <p>Contact:5492729752</p>
             <p>Nationality:Indian</p>
             <br />
-            <p>Rating:⭐⭐⭐⭐⭐</p>
+            
           </div>
         </SwiperSlide>
 
       </Swiper>
     </div>
+    
   );
 }
 
 export default TourGuidData;
-
-

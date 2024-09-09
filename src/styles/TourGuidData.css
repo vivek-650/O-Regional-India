@@ -1,47 +1,51 @@
-.TourGuid_container {
-    max-width: 90rem;
-    padding: 2rem 1rem;
-    margin: 0 auto;
-    background: var(--bg);
-    height: 28rem;
-    /* background: rgb(75, 114, 230); */
-  }
- .TourGuid-cards__swiper-container {
-    height: 25rem; /* Reduced height for the container */
-    width: 95%;
-    padding: 1rem 0;
-    position: relative;
-    /* background: red; */
-  }
-  
-  .TourGuid-cards__swiper-slide {
-    width: 15rem; /* Reduced width for smaller cards */
-    height: 20rem; /* Reduced height */
-    position: relative;
-    border-radius: 1rem;
 
-    background-image:linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-    
-  }
-  .upper-div{
-    display: flex;
-    border-bottom:2px solid green;
-    justify-content: space-around;
-    align-items: center;
-    height: 7rem;
-  }
-  .upper-div img{
-    width: 20%;
-    height: 5rem;
-    /* background: rgb(0, 255, 17); */
-    border-radius: 1.5rem;
-  }
-  .lower-div{
-    padding: 1.5rem 2.8rem;
-  }
-  .lower-div p{
-    font-size: 1.2rem;
-    font-weight: 600;
-  }
-  
-  
+.TourGuid_container {
+  max-width: 73rem;
+  padding: 1rem 1rem;
+  margin: 0 auto;
+  background: var(--bg);
+  height: 30rem;
+  /* background: rgb(75, 114, 230); */
+}
+.TourGuid-cards__swiper-container {
+  height: 28rem; /* Reduced height for the container */
+  width: 95%;
+  padding: 1rem 0;
+  margin-left: 5rem;
+  position: relative;
+  /* background: red; */
+}
+
+.TourGuid-cards__swiper-slide {
+  width: 15rem; /* Reduced width for smaller cards */
+  height: 26rem; /* Reduced height */
+  position: relative;
+  border-radius: 1rem;
+  /* border: 2px solid #000; */
+  background-image:linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  background-image: linear-gradient( 89.5deg,  rgba(131,204,255,1) 0.4%, rgba(66,144,251,1) 100.3% );
+}
+.upper-div{
+  padding: 1.2rem 0;
+  display: flex;
+  /* border-bottom:2px solid green; */
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  height: 12rem;
+}
+.upper-div img{
+  margin-bottom: 0.5rem;
+  width: 30%;
+  height: 7rem;
+  border-radius: 50%;
+}
+.lower-div{
+  padding: 1.5rem 2.8rem;
+}
+.lower-div p{
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
