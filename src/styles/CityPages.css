@@ -8,6 +8,7 @@ html,body{
     width: 100%;
     height: 100%;
 }
+
 .main{
     width: 100%;
     height: 100%;
@@ -93,6 +94,7 @@ html,body{
     position: relative;
 }
 .tour-PopUP{
+    /* backdrop-filter: blur(5px); */
     width: 18rem;
     display: flex;
     align-items: center;
@@ -124,6 +126,7 @@ html,body{
     /* background: #17406c; */
     cursor: pointer;
     position: fixed;
+    /* backdrop-filter: blur(5px); */
 }
 .Hotels-PopUP h3{
     font-size: 25px;

@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import '../styles/TourGuid.css'
 import { X } from 'lucide-react';
 import TourGuidData from '../components/TourGuideData';
-import FestiveCards from './FestiveCards';
+// import FestiveCards from './FestiveCards';
 
 function TourGuid({onclose}) {
     const modalRef = useRef();

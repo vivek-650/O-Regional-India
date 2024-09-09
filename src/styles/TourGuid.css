@@ -1,3 +1,4 @@
+
 .tour-conatiner {
     display: none; 
     position: fixed; 
@@ -9,7 +10,7 @@
     width: 85vw;
     height: 85%;
     overflow: auto;
-    background-color: rgba(12, 13, 14, 0.747);
+    background-color: rgba(41, 39, 39, 0.708);
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -35,7 +36,7 @@
     position: absolute;
     top: -10%; /* Position the button at the top */
     right:10px; /* Align it to the right */
-    color: white;
+    color: black;
     background: transparent;
     border: none; /* Remove any borders */
     cursor: pointer; /* Make it clickable */

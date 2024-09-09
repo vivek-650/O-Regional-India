@@ -1,13 +1,13 @@
 .TourGuid_container {
     max-width: 90rem;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
     margin: 0 auto;
     background: var(--bg);
-    height: 28rem;
+    /* height: 26rem; */
     /* background: rgb(75, 114, 230); */
   }
  .TourGuid-cards__swiper-container {
-    height: 25rem; /* Reduced height for the container */
+    height: 22rem; /* Reduced height for the container */
     width: 95%;
     padding: 1rem 0;
     position: relative;
