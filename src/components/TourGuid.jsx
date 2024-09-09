@@ -14,6 +14,7 @@ function TourGuid({onclose}) {
     }
 
   return (
+    <div className="blur-container">
     <div ref={modalRef} onClick={closeModal} className='tour-conatiner'>
         <div className='model-box'>
             <button onClick={onclose} className='close-btn'><X size={30}/></button>
@@ -23,6 +24,7 @@ function TourGuid({onclose}) {
                 </div>
                 <TourGuidData />
             
+        </div>
         </div>
         </div>
   )
