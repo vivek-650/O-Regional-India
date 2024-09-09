@@ -3,7 +3,9 @@ import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { ClerkProvider } from '@clerk/clerk-react'
-import TourGuidData from './components/TourGuideData.jsx'
+import { Provider } from 'react-redux';
+import rootReducer from './reducer';
+import { configureStore } from '@reduxjs/toolkit';
 
 // Import your publishable key
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
@@ -12,10 +14,16 @@ if (!PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key")
 }
 
+const store = configureStore({
+  reducer:rootReducer,
+})
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <Provider store={store}>
     <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
       <App />
     </ClerkProvider>
+    </Provider>
   </StrictMode>,
 )

@@ -1,12 +1,17 @@
-  import { useState, } from 'react';
+  import { useState} from 'react';
+  import { useNavigate } from 'react-router-dom';
   import { Link } from 'react-router-dom';
   import logo from '../assets/images/logo_crop.png';
   import '../styles/Nav.css';
   import SearchPage from './SearchPage';
-  import Login from './Login';
 
   const Nav = () => {
     const [isSearchVisible, setIsSearchVisible] = useState(false);
+    const navigate = useNavigate();
+
+    const clickHandler = ()=>{
+      navigate("/login");
+    }
 
     const toggleSearch = () => {
       setIsSearchVisible(!isSearchVisible);
@@ -25,8 +30,17 @@
           <button onClick={toggleSearch}>
             <i className="ri-search-2-line"></i>
           </button>
-          <Login></Login>
           {/* <i className="ri-login-box-line"></i> */}
+          <Link to={"/signup"}>
+                <button className="">
+                  Sign Up
+                </button>
+          </Link>
+          <Link to={"/login"}>
+                <button className="">
+                  Login
+                </button>
+          </Link>
         </div>
         {isSearchVisible && <SearchPage onClose={toggleSearch} />}
       </div>

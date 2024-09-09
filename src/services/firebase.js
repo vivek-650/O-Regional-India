@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-// const { getAuth, GoogleAuthProvider } = require("firebase/auth");
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 
 const firebaseConfig = {
@@ -16,11 +16,15 @@ const firebaseConfig = {
 
 let app;
 let firestoreDb;
+let auth;
+let googleProvider;
 
 const initializeFirebaseApp = () =>{
     try {
         app = initializeApp(firebaseConfig);
+        auth = getAuth(app);
         firestoreDb = getFirestore();
+        googleProvider = new GoogleAuthProvider();
         return app;
     } catch (error) {
         console.log("Initialize firebase error: ",error);        
@@ -30,25 +34,4 @@ const initializeFirebaseApp = () =>{
 const getFirebaseApp = () => app;
 
 initializeFirebaseApp();
-export { firestoreDb };
-
-// import { initializeApp } from 'firebase/app';
-// import { getFirestore } from 'firebase/firestore';
-
-// const firebaseConfig = {
-//     apiKey: "AIzaSyBXCeQ0bSe4gCvOsd_J_WFBcwjpsaoOlrA",
-//     authDomain: "restaurant-db2d8.firebaseapp.com",
-//     databaseURL: "https://restaurant-db2d8.firebaseio.com",
-//     projectId: "restaurant-db2d8",
-//     storageBucket: "restaurant-db2d8.appspot.com",
-//     messagingSenderId: "702181374693",
-//     appId: "1:702181374693:web:8af03eda033043676eb20c"
-// };
-
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-
-// // Initialize Firebase services
-// export const auth = getAuth(app);
-// export const firestore = getFirestore(app);
-// export const googleProvider = new GoogleAuthProvider();
+export { firestoreDb, auth, googleProvider };
