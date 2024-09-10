@@ -19,14 +19,8 @@ const store = configureStore({
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-<<<<<<< HEAD
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
-      <HotelPage />
-    </ClerkProvider>
-=======
     <Provider store={store}>
       <App />
     </Provider>
->>>>>>> be619bb012c610c0ef996c3bae85076d2bf2b722
   </StrictMode>,
 )
