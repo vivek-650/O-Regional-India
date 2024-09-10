@@ -9,6 +9,10 @@ import FoodCards from "./components/FoodCards";
 import SearchPage from "./components/SearchPage"; // Import the SearchPage component
 import CityPage from "./components/CityPage"; // Import a CityPage to show city-specific details
 
+// import OpenRoute from "./components/core/Auth/OpenRoute";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Import Router components
 
 import { useState } from "react";
@@ -96,6 +100,29 @@ function App() {
             <Footer />
           </>
         }/>
+
+        <Route path="signup" element={
+          // <OpenRoute>
+            <Signup/>
+          // </OpenRoute>
+        }
+        />
+
+        <Route path="login" element={
+            // <OpenRoute>
+              <Login/>
+            // </OpenRoute>
+          }
+        />
+
+        {/* <Route
+          path="verify-email"
+          element={
+            // <OpenRoute>
+              <VerifyEmail />
+            // </OpenRoute>
+          }
+        /> */}
 
         {/* Dynamic City Page */}
         <Route path="/:cityName" element={<CityPage />} />
