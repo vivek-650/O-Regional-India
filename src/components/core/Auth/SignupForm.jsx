@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { toast } from "react-hot-toast"
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
-// import { useDispatch } from "react-redux"
+import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 
 // import { setSignupData } from "../../../slices/authSlice"
@@ -12,7 +12,7 @@ import { handleRegister } from "../../../services/operations/authFire"
 
 function SignupForm() {
     const navigate = useNavigate()
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
     //student or instructor
     const [accountType, setAccountType] = useState(ACCOUNT_TYPE.TOURIST)
@@ -68,7 +68,7 @@ function SignupForm() {
         }
 
         console.log("SignupData:..",signupData);
-        handleRegister(signupData, accountType)
+        handleRegister(signupData, accountType, dispatch, navigate)
 
         // dispatch(setSignupData(signupData))
 

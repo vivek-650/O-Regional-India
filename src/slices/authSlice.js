@@ -1,30 +1,28 @@
-import { createSlice } from "@reduxjs/toolkit"
-
-const initialState = {
-    signupData: null,
-    loading: false,
-    token: localStorage.getItem("token") ? JSON.parse(localStorage.getItem("token")) : null,
-}
+import { createSlice } from '@reduxjs/toolkit';
 
 const authSlice = createSlice({
-    name: "auth",
-    initialState: initialState,
-    reducers: { 
-        setSignupData(state, value) {
-            state.signupData = value.payload;
-        },
-        setLoading(state, value) {
-            state.loading = value.payload;
-        },
-        setToken(state, value) {
-            state.token = value.payload;
-        },
+  name: 'auth',
+  initialState: {
+    user: null,
+    isAuthenticated: false,
+    role: null, // user role (tourist, tour guide, business)
+    // role: localStorage.getItem("userRole") ? JSON.parse(localStorage.getItem("userRole")) : null,
+  },
+  reducers: {
+    setUser: (state, action) => {
+      state.user = action.payload.user;
+      state.isAuthenticated = true;
+      state.role = action.payload.role; // Store the user's role
+    //   localStorage.setItem("userRole", JSON.stringify(action.payload.role));
     },
+    logout: (state) => {
+      state.user = null;
+      state.isAuthenticated = false;
+      state.role = null;
+    //   localStorage.removeItem("userRole");
+    },
+  },
 });
 
-export const { 
-    setSignupData, 
-    setLoading, 
-    setToken 
-} = authSlice.actions;
+export const { setUser, logout } = authSlice.actions;
 export default authSlice.reducer;

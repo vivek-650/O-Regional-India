@@ -1,21 +1,27 @@
-  import { useState} from 'react';
-  import { useNavigate } from 'react-router-dom';
-  import { Link } from 'react-router-dom';
-  import logo from '../assets/images/logo_crop.png';
-  import '../styles/Nav.css';
-  import SearchPage from './SearchPage';
+import { useDispatch, useSelector } from 'react-redux';
+import { useState} from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import logo from '../assets/images/logo_crop.png';
+import '../styles/Nav.css';
+import SearchPage from './SearchPage';
+import { handleLogOut } from '../services/operations/authFire';
 
   const Nav = () => {
-    const [isSearchVisible, setIsSearchVisible] = useState(false);
+    const auth = useSelector((state)=> state.auth);
+    console.log("Autheticated: ", auth.isAuthenticated);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    const clickHandler = ()=>{
-      navigate("/login");
-    }
+    const [isSearchVisible, setIsSearchVisible] = useState(false);
 
     const toggleSearch = () => {
       setIsSearchVisible(!isSearchVisible);
     };
+
+    const handleLogOutFun = () =>{
+      handleLogOut(dispatch, navigate);
+    }
 
     return (
       <div className="nav-bar">
@@ -31,16 +37,36 @@
             <i className="ri-search-2-line"></i>
           </button>
           {/* <i className="ri-login-box-line"></i> */}
-          <Link to={"/signup"}>
-                <button className="">
-                  Sign Up
-                </button>
-          </Link>
-          <Link to={"/login"}>
-                <button className="">
-                  Login
-                </button>
-          </Link>
+
+          {auth.isAuthenticated ? (
+            <>
+              <Link to={"/dashboard"}>
+                    <button className="">
+                      Dashboard
+                    </button>
+              </Link>
+              <button onClick={handleLogOutFun}>
+                Log Out
+              </button>
+            </>
+          ):(
+            <>
+            <Link to={"/signup"}>
+                  <button className="">
+                    Sign Up
+                  </button>
+            </Link>
+            <Link to={"/login"}>
+                  <button className="">
+                    Login
+                  </button>
+            </Link>
+            </>
+          )}
+
+          {/* <button onClick={getUserClaims}>
+            Check User
+          </button> */}
         </div>
         {isSearchVisible && <SearchPage onClose={toggleSearch} />}
       </div>

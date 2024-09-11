@@ -8,20 +8,57 @@ import Footer from "./components/Footer";
 import FoodCards from "./components/FoodCards";
 import SearchPage from "./components/SearchPage"; // Import the SearchPage component
 import CityPage from "./components/CityPage"; // Import a CityPage to show city-specific details
+import Dashboard from "./components/core/Dashboard/Dashboard";
 
-// import OpenRoute from "./components/core/Auth/OpenRoute";
+import OpenRoute from "./components/core/Auth/OpenRoute";
+import PrivateRoute from "./components/core/Auth/PrivateRoute";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Import Router components
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+import { auth, firestoreDb } from "./services/firebase";
+import { onAuthStateChanged } from 'firebase/auth';
+import { getDoc, doc } from "firebase/firestore";
+import { useDispatch } from "react-redux";
+import { setUser } from "./slices/authSlice";
 
 function App() {
+  const dispatch = useDispatch()
+
   const [showSearch, setShowSearch] = useState(false);
 
   const handleOpenSearch = () => setShowSearch(true);
   const handleCloseSearch = () => setShowSearch(false);
+  
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (userr) => {
+      if (userr) {
+        try {
+          const tokenResult = await userr.getIdTokenResult();
+          const claims = tokenResult.claims;
+          const user = claims.user_id;
+
+          // console.log("User's Custom Claims: ", claims);
+
+          const userDoc = await getDoc(doc(firestoreDb, "users", userr.uid));
+          const role = userDoc.data().accountType;
+          // console.log("User account type: ", role);
+          dispatch(setUser({user, role}));
+
+        } catch (error) {
+          console.error("Error fetching user claims: ", error);
+        }
+      } else {
+        console.log("No user is currently signed in.");
+      }
+    });
+
+    // Cleanup subscription on unmount
+    return () => unsubscribe();
+  }, []);
 
   return (
     <Router>
@@ -102,27 +139,38 @@ function App() {
         }/>
 
         <Route path="signup" element={
-          // <OpenRoute>
+          <OpenRoute>
             <Signup/>
-          // </OpenRoute>
+          </OpenRoute>
         }
         />
 
         <Route path="login" element={
-            // <OpenRoute>
+            <OpenRoute>
               <Login/>
-            // </OpenRoute>
+            </OpenRoute>
           }
         />
 
-        {/* <Route
-          path="verify-email"
-          element={
-            // <OpenRoute>
-              <VerifyEmail />
-            // </OpenRoute>
-          }
-        /> */}
+        <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
+
+        {/* Private routes: accessible only if user is authenticated with the correct role */}
+        <Route path="/tour-guide-dashboard" element={<PrivateRoute allowedRoles={['Tour Guide']}>
+          {/* <TourGuideDashboard /> */}
+          </PrivateRoute>} />
+        <Route path="/business-dashboard" element={<PrivateRoute allowedRoles={['Business']}>
+          {/* <BusinessDashboard /> */}
+          </PrivateRoute>} />
+        <Route path="/tourist-dashboard" element={<PrivateRoute allowedRoles={['Tourist']}>
+          {/* <TouristDashboard /> */}
+          </PrivateRoute>} />
+
+        {/* Not authorized route */}
+        <Route path="/not-authorized" element={
+          <>
+          <h1>Not Authorized</h1>
+          </>
+        } />
 
         {/* Dynamic City Page */}
         <Route path="/:cityName" element={<CityPage />} />
