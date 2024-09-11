@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    width: 100vw;
+    height: 100vh;
+}
+.main{
+    width: 100vw;
+    height: 100vh;
+}
+.main-container{
+    width: 100vw;
+    height: 100vh;
+    /* background: red; */
+}
+.checkbox-nav{
+    padding: 1rem 5rem;
+    width: 100vw;
+    height: 13vh;
+    background: #20274D;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+input{
+    padding: 1rem;
+    width: 18rem;
+    border-radius: 10px;
+    border: none;
+}
+.date-box1{
+    border-radius: 10px 0px 0px 10px;
+    border-right: 1px dotted #000;
+}
+.date-box2{
+    border-radius: 0px 10px 10px 0px;
+}
+.hotel-part-division{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.left-part{
+    width: 40vw;
+    height: 100vh;
+    /* background: #c97575; */
+    
+}
+.location-map{
+    margin-top: 4rem;
+    margin-left: 3rem;
+    width: 35vw;
+    height: 70vh;
+    background: #c97575;
+    object-fit: cover;
+}
+.right-part{
+    width: 60vw;
+    height: 100vh;
+    /* background: #c97575; */
+    
+}
+.Hotels-card{
+    margin-top: 4rem;
+    margin-left: 4rem;
+    width: 50vw;
+    height: 40vh;
+    /* background: #c97575; */
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 5rem;
+    border-radius: 10px;
+    border: 1px solid #000;
+    transition: .4s ease;
+}
+.hotels-img img{
+    width: 20vw;
+    height: 39.5vh;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+}
+.Hotels-card:hover{
+    background: rgba(135, 207, 235, 0.731);
+    border: none;
+}
+.left-textarea h2{
+    margin: 6rem 6rem 2rem 15rem;
+   
+}
+.filer-check{
+    margin-left: 10rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

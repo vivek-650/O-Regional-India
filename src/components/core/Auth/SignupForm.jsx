@@ -3,6 +3,7 @@ import { toast } from "react-hot-toast"
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
+import '../../../styles/Form.css'
 
 // import { setSignupData } from "../../../slices/authSlice"
 import { ACCOUNT_TYPE } from "../../../utils/constant"
@@ -103,19 +104,22 @@ function SignupForm() {
     ]
 
     return (
-        <div>
+        <div className="main-form-container">
 
             {/* Tab */}
-            <Tab tabData={tabData} field={accountType} setField={setAccountType}/>
+            <Tab tabData={tabData} field={accountType} setField={setAccountType} />
                 
             {/* Form */}
+            <div className="bg-image-container">
+                <img src="https://img.freepik.com/premium-photo/iconic-qutub-minar-standing-tall-against-white-backdrop_983420-32761.jpg" alt="" />
+            </div>
             <form 
             onSubmit={handleOnSubmit} 
-            className="flex w-full flex-col gap-y-4">
+            className="form-body">
 
                 <div className="flex gap-x-4">
                     <label>
-                        <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+                        <p className="label-design">
                             Name <sup className="text-pink-200">*</sup>
                         </p>
                         <input 
@@ -128,12 +132,12 @@ function SignupForm() {
                             style={{
                                 boxShadow: "inset 0 -1px 0px rgba(255, 255, 255, 0.18)",
                             }}
-                            className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] text-richblack-5"
+                            className="input-box"
                         />
                     </label>
                 </div>
                 <label className="w-full">
-                    <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+                    <p className="label-design">
                         Email Address <sup className="text-pink-200"> * </sup>
                     </p>
                     <input 
@@ -146,12 +150,12 @@ function SignupForm() {
                         style={{
                             boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                         }}
-                        className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] text-richblack-5"
+                        className="input-box"
                     />
                 </label>
                 <div className="flex gap-x-4">
-                    <label className="relative">
-                        <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+                    <label className="password-label">
+                        <p className="label-design">
                             Create Password <sup className="text-pink-200"> * </sup>
                         </p>
                         <input 
@@ -164,11 +168,11 @@ function SignupForm() {
                             style={{
                                 boxShadow: "inset 0px 0px -1px rgba(255, 255, 255, 0.18)",
                             }}
-                            className = "w-full rounded-[0.5rem] bg-richblack-800 p-[12px] pr-10 text-richblack-5"
+                            className = "input-box"
                         />
                         <span 
                             onClick={() => setShowPassword((prev) => !prev)}
-                            className="absolute right-3 top-[38px] z-[10] cursor-pointer"
+                            className="password-eye-icon1"
                         >
                             {showPassword ? (
                                 <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
@@ -177,8 +181,8 @@ function SignupForm() {
                             )}
                         </span>
                     </label>
-                    <label className="relative">
-                        <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+                    <label className="password-label">
+                        <p className="label-design">
                             Confirm Password <sup className="text-pink-200"> * </sup>
                         </p>
                         <input 
@@ -191,11 +195,11 @@ function SignupForm() {
                             style={{
                                 boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                             }}
-                            className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] pr-10 text-richblack-5"
+                            className="input-box"
                         />
                         <span 
                             onClick={() => setShowConfirmPassword((prev) => !prev)}
-                            className="absolute right-3 top-[38px] z-[10] cursor-pointer"
+                            className="password-eye-icon2"
                         >
                             {showConfirmPassword ? (
                                 <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
@@ -208,7 +212,7 @@ function SignupForm() {
                 </div>
                 <div>
                     <label>
-                        <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">
+                        <p className="label-design">
                             Gender <sup className="text-pink-200">*</sup>
                         </p>
                         <select 
@@ -216,7 +220,7 @@ function SignupForm() {
                             name="gender"
                             value={gender}
                             onChange={handleOnChange}
-                            className="w-full rounded-[0.5rem] bg-richblack-800 p-[12px] text-richblack-5"
+                            className="input-box"
                         >
                         <option value="">Choose Gender</option>
                         <option value="male">Male</option>
@@ -227,9 +231,12 @@ function SignupForm() {
 
                 {(accountType === ACCOUNT_TYPE.BUSINESS || accountType === ACCOUNT_TYPE.TOURGUIDE )&& 
                                                
-                    <div className="">
+                    <div className="main-form-lower-container">
+                        <div className="bg-image-lower-container">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.4XqhjVS1WB3oc5v_O1FLdQAAAA%26pid%3DApi&f=1&ipt=79efdc0ab44d2a19a66c44915be71891fc299789282cca65428ec49835be94e0&ipo=images" alt="" />
+            </div>
                     <label>
-                        <p className="">
+                        <p className="label-design">
                             City <sup className="">*</sup>
                         </p>
                         <input 
@@ -239,12 +246,12 @@ function SignupForm() {
                             value={city}
                             onChange={handleOnChange}
                             placeholder="Enter Name"
-                            className=""
+                            className="input-box"
                         />
                     </label>
 
                     <label>
-                        <p className="">
+                        <p className="label-design">
                             Adddress <sup className="">*</sup>
                         </p>
                         <input 
@@ -254,12 +261,12 @@ function SignupForm() {
                             value={address}
                             onChange={handleOnChange}
                             placeholder="Enter Name"
-                            className=""
+                            className="input-box"
                         />
                     </label>
 
                     <label>
-                        <p className="">
+                        <p className="label-design">
                             Contact <sup className="">*</sup>
                         </p>
                         <input 
@@ -269,7 +276,7 @@ function SignupForm() {
                             value={contact}
                             onChange={handleOnChange}
                             placeholder="Enter Name"
-                            className=""
+                            className="input-box"
                         />
                     </label>
                     </div>    
@@ -278,7 +285,7 @@ function SignupForm() {
                 {accountType === ACCOUNT_TYPE.BUSINESS &&
                 <div className="">
                     <label>
-                        <p className="">
+                        <p className="label-design">
                             Business Type <sup className="">*</sup>
                         </p>
                         <select 
@@ -286,7 +293,7 @@ function SignupForm() {
                             name="businessType"
                             value={businessType}
                             onChange={handleOnChange}
-                            className=""
+                            className="input-box"
                         >
                         <option value="">Choose Business</option>
                         <option value="food">Food</option>
@@ -300,7 +307,7 @@ function SignupForm() {
                 {accountType === ACCOUNT_TYPE.TOURGUIDE &&
                     <div>
                         <label>
-                        <p className="">
+                        <p className="label-design">
                             Aadhar Card Number <sup className="">*</sup>
                         </p>
                         <input 
@@ -310,13 +317,13 @@ function SignupForm() {
                             value={aadharNumber}
                             onChange={handleOnChange}
                             placeholder="Enter Name"
-                            className=""
+                            className="input-box"
                         />
                     </label>
                     </div>
                 }              
 
-                <button type="submit" className="" >
+                <button type="submit" className="create-button" >
                     Create Account
                 </button>
             </form>

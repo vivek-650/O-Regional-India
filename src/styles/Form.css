@@ -1,0 +1,144 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    /* background: #000; */
+}
+.main-form-container{
+    /* background: red; */
+    margin-top: 5rem;
+    width: 100%;
+    height: 100%;
+    /* background: red; */
+    position: relative;
+}
+.bg-image-container img{
+    position: absolute;
+    margin-top: 0vh;
+    margin-left: 2vw;
+    width: 32vw;
+    height: 78vh;
+    /* background: red; */
+    z-index: 0;
+}
+.tab-box {
+    background-color: transparent;
+    color: #4B4B4B; /* Default text color */
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 9999px; /* Rounded button */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Style for the active button */
+.tab-box.active {
+    background-color: #1F1F1F; /* Active background color */
+    color: #EBF8FF; /* Active text color */
+}
+.tab-container{
+    width: 50%;
+    margin-left: 25%;
+    height: 100%;
+    /* background: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.tab-box{
+    width: 15%;
+    margin-top: 2rem;
+    /* margin-left: 18%; */
+    border-radius: 0.5rem;
+    background-color: #f4f4f4; /* Adjust according to your project's color */
+    padding: 12px;
+    color: #2B2B2B; 
+}
+.tab-box:active{
+    background-color: #FFFBEB;
+}
+.form-body{
+    z-index: 9999;
+    margin-left: 38%;
+    /* background: red; */
+    margin-top: 2.5rem;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.label-design{
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    color: #2B2B2B;
+}
+.input-box{
+    width: 50%;
+    border-radius: 0.5rem;
+    background-color: #f4f4f4; /* Adjust according to your project's color */
+    padding: 12px;
+    color: #2B2B2B; /* Adjust according to your project's color */
+}
+.password-label{
+    position: relative;
+}
+.password-eye-icon{
+    position: absolute;
+    right: 24.5rem;
+    top: 38px;
+    z-index: 10;
+    cursor: pointer;
+}
+.password-eye-icon1{
+    position: absolute;
+    right: 0.5rem;
+    top: 38px;
+    z-index: 10;
+    cursor: pointer;
+}
+.password-eye-icon2{
+    position: absolute;
+    right: 0.5rem;
+    top: 4.3rem;
+    z-index: 10;
+    cursor: pointer;
+}
+.forget-password{
+    text-decoration: none;
+    color: black;
+    /* background: red; */
+}
+.SignIn-design{
+    margin-left: 4.6rem;
+    width: 15rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    background-color: #FFFBEB; 
+    padding: 1rem;
+    font-weight: 500;
+    color: #0B0B0B; 
+}
+.create-button{
+    width: 50%;
+    margin-top: .5rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background: #FFFBEB;
+    font-weight: 500;
+    color: #0B0B0B; 
+}
+.bg-image-lower-container img{
+    position: absolute;
+    bottom: -8rem;
+    left: 8rem;
+    width: 15vw;
+    height: 35vh;
+}
