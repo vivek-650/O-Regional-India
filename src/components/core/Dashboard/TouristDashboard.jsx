@@ -1,13 +1,24 @@
 import  { useState } from 'react';
 import "../../../styles/TouristDashboard.css";
+import { fetchUserData } from '../../../services/operations/authUser';
 
 const TouristDashboard = () => {
   const [activeTab, setActiveTab] = useState('profile'); // 'profile' is active by default
-
+  const [userData, setUserData] = useState("null");
   // Function to handle "My Profile" click
   const handleProfileClick = () => {
     setActiveTab('profile');
   };
+
+  useEffect(() => {
+    const getUserData = async () => {
+      const UserData = await fetchUserData(); // Call the function
+      console.log("User data came: ",UserData);
+      setUserData(UserData); // Store the fetched data in local state
+    };
+
+      getUserData();
+  }, [UserData]);     
 
   return (
     <div className="profile-container">
@@ -33,23 +44,23 @@ const TouristDashboard = () => {
             <div className="detail-row">
               <img src="https://via.placeholder.com/100" alt="Profile" className="profile-photo" />
             </div>
-            <h3>xyz@gmail.com</h3>
+            <h3>{UserData.email}</h3>
             <div className='detail-conatiner'>
                 <div className="detail-row">
                     <label>Name:</label>
-                    <p>John Doe</p>
+                    <p>{userData.name}</p>
                 </div>
                 <div className="detail-row">
                     <label>Address:</label>
-                    <p>123 Main St, Springfield</p>
+                    <p>{userData.address}</p>
                 </div>
                 <div className="detail-row">
                     <label>Contact:</label>
-                    <p>+1 234 567 890</p>
+                    <p>{userData.contact}</p>
                 </div>
                 <div className="detail-row">
                     <label>Gender:</label>
-                    <p>Male</p>
+                    <p>{userData.gender}</p>
                 </div>
             </div>
           </div>

@@ -1,8 +1,21 @@
 // import React from 'react'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import '../../../styles/TouristDashboard.css'
+import { fetchUserData } from "../../../services/operations/authUser";
+
 const BusinessDashboard = () => {
     const [activeTab, setActiveTab] = useState('profile'); // 'profile' is active by default
+    const [userData, setUserData] = useState("null");
+
+    useEffect(() => {
+      const getUserData = async () => {
+        const UserData = await fetchUserData(); // Call the function
+        console.log("User data came: ",UserData);
+        setUserData(UserData); // Store the fetched data in local state
+      };
+
+        getUserData();
+    }, []);
 
     // Sample product data
     const products = [
@@ -78,35 +91,31 @@ const BusinessDashboard = () => {
               <div className="detail-row">
                 <img src="https://via.placeholder.com/100" alt="Profile" className="profile-photo" />
               </div>
-              <h3>xyz@gmail.com</h3>
+              <h3>{userData.email}</h3>
               <div className='detail-container'>
                   <div className="detail-row">
                       <label>Name:</label>
-                      <p>John Doe</p>
-                  </div>
-                  <div className="detail-row">
-                      <label>Aadhar no:</label>
-                      <p>xxxx xxxx xxxx</p>
+                      <p>{userData.name}</p>
                   </div>
                   <div className="detail-row">
                       <label>City:</label>
-                      <p>xyz</p>
+                      <p>{userData.city}</p>
                   </div>
                   <div className="detail-row">
                       <label>Address:</label>
-                      <p>123 Main St, Springfield</p>
+                      <p>{userData.address}</p>
                   </div>
                   <div className="detail-row">
                       <label>Contact:</label>
-                      <p>+1 234 567 890</p>
+                      <p>{userData.contact}</p>
                   </div>
                   <div className="detail-row">
                       <label>Gender:</label>
-                      <p>Male</p>
+                      <p>{userData.gender}</p>
                   </div>
                   <div className="detail-row">
                       <label>Business Type:</label>
-                      <p>xyz</p>
+                      <p>{userData.businessType}</p>
                   </div>
               </div>
 

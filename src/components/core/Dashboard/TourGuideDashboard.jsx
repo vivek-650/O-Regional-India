@@ -1,12 +1,40 @@
 // import React from 'react'
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { handleLogOut } from '../../../services/operations/authFire';
+import { fetchUserData } from "../../../services/operations/authUser";
+
 const TourGuideDashboard = () => {
     const [activeTab, setActiveTab] = useState('profile'); // 'profile' is active by default
+    
+    const [userData, setUserData] = useState("null");
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     // Function to handle "My Profile" click
     const handleProfileClick = () => {
       setActiveTab('profile');
     };
+
+    const handleLogOutFun = () =>{
+      handleLogOut(dispatch, navigate);
+    }
+
+    useEffect(() => {
+      const getUserData = async () => {
+        const UserData = await fetchUserData(); // Call the function
+        console.log("User data came: ",UserData);
+        setUserData(UserData); // Store the fetched data in local state
+      };
+
+        getUserData();
+    }, []);
+
+    // const handleAddFamous = () =>{
+
+    // }
   
     return (
       <div className="profile-container">
@@ -15,7 +43,8 @@ const TourGuideDashboard = () => {
           <ul>
             <li className={activeTab === 'profile' ? 'active' : ''} onClick={handleProfileClick}>My Profile</li>
             {/* <li>Settings</li> */}
-            <li>Logout</li>
+            <li onClick={handleLogOutFun}>Logout</li>
+            <li>Add Local Specialities</li>
           </ul>
         </div>
   
@@ -31,31 +60,31 @@ const TourGuideDashboard = () => {
               <div className="detail-row">
                 <img src="https://via.placeholder.com/100" alt="Profile" className="profile-photo" />
               </div>
-              <h3>xyz@gmail.com</h3>
+              <h3>{userData.email}</h3>
               <div className='detail-conatiner'>
                   <div className="detail-row">
                       <label>Name:</label>
-                      <p>John Doe</p>
+                      <p>{userData.name}</p>
                   </div>
                   <div className="detail-row">
                       <label>Aadhar no:</label>
-                      <p>xxxx xxxx xxxx</p>
+                      <p>{userData.aadharNumber}</p>
                   </div>
                   <div className="detail-row">
                       <label>city:</label>
-                      <p>xyz</p>
+                      <p>{userData.city}</p>
                   </div>
                   <div className="detail-row">
                       <label>Address:</label>
-                      <p>123 Main St, Springfield</p>
+                      <p>{userData.address}</p>
                   </div>
                   <div className="detail-row">
                       <label>Contact:</label>
-                      <p>+1 234 567 890</p>
+                      <p>{userData.contact}</p>
                   </div>
                   <div className="detail-row">
                       <label>Gender:</label>
-                      <p>Male</p>
+                      <p>{userData.gender}</p>
                   </div>
               </div>
             </div>
