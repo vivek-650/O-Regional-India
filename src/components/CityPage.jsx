@@ -1,8 +1,10 @@
-import React, { useState } from "react"; // Added useState
+import React, { useState, useEffect } from "react"; // Added useState
+import axios from "axios";
+
 import "../styles/CityPages.css";
 import { useLocation } from 'react-router-dom';
-
 import DelhiFoodCard from "./DelhiFoodCard";
+import { WeatherCard } from "./WeatherCard";
 import TourGuid from "./TourGuid";
 import DynamicDesignCard from "./DynamicDesignCard";
 
@@ -13,6 +15,29 @@ function CityPage() {
   const location = useLocation(); 
   const { cityData } = location.state || {}; 
   console.log("from cityPage", cityData);
+
+  const [weatherData, setWeatherData] = useState(null);
+  // const [loading, setLoading] = useState(true);
+
+  const citylocation = cityData.cityName; // Replace with your location
+  // console.log("Cityname: ",citylocation);
+  const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${citylocation},india&APPID=830a6d619ab191faa813389258ac04b0`;
+
+  useEffect(() => {
+    const fetchWeather = async () => {
+      try {
+        const response = await axios.get(apiURL);
+        setWeatherData(response.data);
+        // console.log("Weather report: ",response.data);
+        // setLoading(false);
+      } catch (err) {
+        console.log("Error: ",err);
+        // setLoading(false);
+      }
+    };
+
+    fetchWeather();
+  }, []);
 
   return (
     <div className="main">
@@ -33,6 +58,8 @@ function CityPage() {
         />
         <h1>{cityData?.cityName}</h1>
       </div>
+
+      <WeatherCard data={weatherData}></WeatherCard>
 
       <div className="page2">
         <div className="hidden-text">

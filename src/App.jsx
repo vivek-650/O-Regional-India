@@ -173,7 +173,7 @@ function App() {
         } />
 
         {/* Dynamic City Page */}
-        <Route path="/:cityName" element={<CityPage />} />
+        <Route path="/:cityName" element={<PrivateRoute><CityPage /></PrivateRoute>} />
       </Routes>
     </Router>
   );
