@@ -43,7 +43,7 @@ html, body{
     gap: 10px;
 }
 .nav3 button{
-    background-color: transparent;
+    background-color:transparent;
     border: none;
 }
 .nav3 i{
@@ -58,4 +58,17 @@ html, body{
     padding-right: 10px;
     border-right: 2px solid #a0a0a0;
 
+}
+.nav3 .log-button{
+    background-color: #faf3d5;
+    padding: 0.8rem 1rem;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin-left: .5rem;
+}
+.nav3 .log-button:hover{
+    background-color: #f8e7c9;
 }

@@ -6,33 +6,50 @@ import FestiveCards from "./components/FestiveCards";
 import CardCollection from "./components/CardCollection";
 import Footer from "./components/Footer";
 import FoodCards from "./components/FoodCards";
-import SearchPage from "./components/SearchPage"; // Import the SearchPage component
-import CityPage from "./components/CityPage"; // Import a CityPage to show city-specific details
+import SearchPage from "./components/SearchPage";
+import CityPage from "./components/CityPage";
 import Dashboard from "./components/core/Dashboard/Dashboard";
-
 import OpenRoute from "./components/core/Auth/OpenRoute";
 import PrivateRoute from "./components/core/Auth/PrivateRoute";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Import Router components
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
-
 import { auth, firestoreDb } from "./services/firebase";
-import { onAuthStateChanged } from 'firebase/auth';
+import { onAuthStateChanged } from "firebase/auth";
 import { getDoc, doc } from "firebase/firestore";
 import { useDispatch } from "react-redux";
 import { setUser } from "./slices/authSlice";
 
 function App() {
-  const dispatch = useDispatch()
-
+  const dispatch = useDispatch();
   const [showSearch, setShowSearch] = useState(false);
 
   const handleOpenSearch = () => setShowSearch(true);
   const handleCloseSearch = () => setShowSearch(false);
-  
+
+  // Load Google Translate script
+  useEffect(() => {
+    const existingScript = document.getElementById("google-translate-script");
+    if (!existingScript) {
+      const googleTranslateScript = document.createElement("script");
+      googleTranslateScript.id = "google-translate-script";
+      googleTranslateScript.type = "text/javascript";
+      googleTranslateScript.async = true;
+      googleTranslateScript.src =
+        "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+      document.body.appendChild(googleTranslateScript);
+
+      window.googleTranslateElementInit = () => {
+        new window.google.translate.TranslateElement(
+          { pageLanguage: "en", layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE },
+          "google_translate_element"
+        );
+      };
+    }
+  }, []);
+
+  // Firebase authentication
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (userr) => {
       if (userr) {
@@ -41,13 +58,9 @@ function App() {
           const claims = tokenResult.claims;
           const user = claims.user_id;
 
-          // console.log("User's Custom Claims: ", claims);
-
           const userDoc = await getDoc(doc(firestoreDb, "users", userr.uid));
           const role = userDoc.data().accountType;
-          // console.log("User account type: ", role);
-          dispatch(setUser({user, role}));
-
+          dispatch(setUser({ user, role }));
         } catch (error) {
           console.error("Error fetching user claims: ", error);
         }
@@ -56,123 +69,76 @@ function App() {
       }
     });
 
-    // Cleanup subscription on unmount
     return () => unsubscribe();
-  }, []);
+  }, [dispatch]);
 
   return (
     <Router>
-      <Nav onSearchClick={handleOpenSearch} /> {/* Pass a prop to open search */}
-      
-      {showSearch && <SearchPage onClose={handleCloseSearch} />} {/* Render SearchPage based on state */}
-      
+      <div id="google_translate_element"></div> {/* Google Translate element */}
+
+      <Nav onSearchClick={handleOpenSearch} />
+
+      {showSearch && <SearchPage onClose={handleCloseSearch} />}
+
       <Routes>
-        {/* Main Pages */}
-        <Route path="/" element={
-          <>
-            <div id="page1">
+        <Route
+          path="/"
+          element={
+            <>
+              <div id="page1">
                 <video src={video} autoPlay muted loop id="video"></video>
-                  <p>"Regional India is Original India"</p>
-            </div>
-            <div id="page2">
-              <div className="contain">
-                <div className="hidden-text">
-                  <p>
-                    One of the oldest civilisations in the world, India is a mosaic of
-                    multicultural experiences. With a rich heritage and myriad
-                    attractions, the country is among the most popular tourist
-                    destinations in the world. It covers an area of 32, 87,263 sq. km,
-                    extending from the snow-covered Himalayan heights to the tropical
-                    rain forests of the south. As the 7th largest country in the
-                    world, India stands apart from the rest of Asia, marked off as it
-                    is by mountains and the sea, which give the country a distinct
-                    geographical entity.
-                  </p>
+                <p>"Regional India is Original India"</p>
+              </div>
+              <div id="page2">
+                <div className="contain">
+                  <div className="hidden-text">
+                    <p>
+                      One of the oldest civilisations in the world, India is a mosaic of
+                      multicultural experiences. With a rich heritage and myriad
+                      attractions, the country is among the most popular tourist
+                      destinations in the world. It covers an area of 32, 87,263 sq. km,
+                      extending from the snow-covered Himalayan heights to the tropical
+                      rain forests of the south.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div id="page4">
-              <div className="contain">
-                {/* <div className="poster">
-                  <img
-                    src="https://www.incredibleindia.org/content/dam/incredible-india-v2/images/banner/Dekho-Apna-Desh-website-banner-1.png"
-                    alt=""
-                  />
-                </div> */}
-                <p className="popular">Must Visit Destinations</p>
-                <p className="text">
-                  From historical cities to natural splendours, come see the best of
-                  India
-                </p>
-                <div className="Destination-cards">
-                  <DestinationCards />
-                </div>
-                {/* <div className="poster">
-                  <img src="https://www.incredibleindia.org/content/dam/incredible-india-v2/images/banner/wedinindia.png" />
-                </div> */}
-                <p className="popular">Eats With Us</p>
-                <p className="text">
-                  As you travel through the country, Taste our diverse and tasty foods.
-                </p>
-                <div className="Food-cards">
-                  <FoodCards />
+              <div id="page4">
+                <div className="contain">
+                  <p className="popular">Must Visit Destinations</p>
+                  <p className="text">From historical cities to natural splendours, come see the best of India</p>
+                  <div className="Destination-cards">
+                    <DestinationCards />
+                  </div>
+                  <p className="popular">Eats With Us</p>
+                  <p className="text">Taste our diverse and tasty foods.</p>
+                  <div className="Food-cards">
+                    <FoodCards />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div id="page5">
-              <div className="contain">
-                <p className="popular">Immersive Experiences</p>
-                <p className="text">
-                  In the land of opulence, let loose and discover yourself
-                </p>
+              <div id="page5">
+                <div className="contain">
+                  <p className="popular">Immersive Experiences</p>
+                  <p className="text">In the land of opulence, let loose and discover yourself.</p>
+                </div>
+                <CardCollection />
+                <p className="popular">Celebrate With Us</p>
+                <p className="text">Be a part of our festivals and feasts.</p>
+                <FestiveCards />
               </div>
-              <CardCollection />
-              <p className="popular">Celebrate With Us</p>
-              <p className="text">
-                As you travel through the country, be a part of our festivals and
-                feasts
-              </p>
-              <FestiveCards />
-            </div>
-            <Footer />
-          </>
-        }/>
-
-        <Route path="signup" element={
-          <OpenRoute>
-            <Signup/>
-          </OpenRoute>
-        }
-        />
-
-        <Route path="login" element={
-            <OpenRoute>
-              <Login/>
-            </OpenRoute>
+              <Footer />
+            </>
           }
         />
 
-        <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
-
-        {/* Private routes: accessible only if user is authenticated with the correct role */}
-        <Route path="/tour-guide-dashboard" element={<PrivateRoute allowedRoles={['Tour Guide']}>
-          {/* <TourGuideDashboard /> */}
-          </PrivateRoute>} />
-        <Route path="/business-dashboard" element={<PrivateRoute allowedRoles={['Business']}>
-          {/* <BusinessDashboard /> */}
-          </PrivateRoute>} />
-        <Route path="/tourist-dashboard" element={<PrivateRoute allowedRoles={['Tourist']}>
-          {/* <TouristDashboard /> */}
-          </PrivateRoute>} />
-
-        {/* Not authorized route */}
-        <Route path="/not-authorized" element={
-          <>
-          <h1>Not Authorized</h1>
-          </>
-        } />
-
-        {/* Dynamic City Page */}
+        <Route path="signup" element={<OpenRoute><Signup /></OpenRoute>} />
+        <Route path="login" element={<OpenRoute><Login /></OpenRoute>} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/tour-guide-dashboard" element={<PrivateRoute allowedRoles={['Tour Guide']} />} />
+        <Route path="/business-dashboard" element={<PrivateRoute allowedRoles={['Business']} />} />
+        <Route path="/tourist-dashboard" element={<PrivateRoute allowedRoles={['Tourist']} />} />
+        <Route path="/not-authorized" element={<h1>Not Authorized</h1>} />
         <Route path="/:cityName" element={<CityPage />} />
       </Routes>
     </Router>
