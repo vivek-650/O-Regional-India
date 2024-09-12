@@ -1,71 +1,50 @@
-.blur-container{
+.blur-container {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: black;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     backdrop-filter: blur(4px);
-  }
-.tour-conatiner {
-    display: none; 
-    position: fixed; 
-    z-index: 999;
-    padding: 0; /* Remove any extra padding */
-    margin: 0; /* Reset any margins */
-    left: 0;
     top: 0;
-    width: 85vw;
-    height: 85%;
-    overflow: auto;
-    background-color: rgba(1, 0, 0, 0.833);
-    border-radius: 20px;
+    left: 0;
+    z-index: 999; /* Make sure this is on top of everything */
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-top: 10vh;
-    margin-left: 7.5vw; 
+    justify-content: center;
+    align-items: center; /* Center the modal */
 }
 
+.tour-conatiner {
+    position: relative;
+    width: 60vw;
+    height: auto;
+    max-height: 80vh;  /* Limit the height */
+    background-color: rgba(1, 0, 0, 0.9); /* Dark background */
+    border-radius: 20px;
+    padding: 20px;
+    overflow-y: auto; /* Scroll if content is long */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
 .model-box {
-    margin-top: 5%;
-    width: 100vw;
-    /* background: blue; */
-    display: flex;
-    flex-direction: column;
-    color: white;
-    padding: 1.5rem; /* Add padding instead of negative margins */
-    position: relative; /* Ensure proper positioning of the close button */
+    position: relative;
+    width: 100%;
     text-align: center;
 }
 
 .close-btn {
     position: absolute;
-    top: -10%; /* Position the button at the top */
-    right:10px; /* Align it to the right */
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
     color: white;
-    background: transparent;
-    border: none; /* Remove any borders */
-    cursor: pointer; 
-    margin-top: -3rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 100; /* Ensure it's above the content */
 }
 
 .text-container {
     color: white;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    /* background: red; */
-    width: 100%; /* Use width and height appropriately */
     gap: 1rem;
-    padding-left: 2rem;
-    margin-top: -8rem;
-    /* text-align: center; */
-}
-.text-container h3{
-    font-weight: 500;
-    line-height: 2.1;
-}
-.text-container h5{
-    font-weight: 500;
 }

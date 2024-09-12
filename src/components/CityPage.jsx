@@ -77,21 +77,33 @@ function CityPage() {
       </div>
 
       <div className="page3">
-        <div className="poster"></div>
-        {showPopUp && <TourGuid onclose={() => setShowPopUp(false)} />}
-        <div className="tour-PopUP">
-          <h3 onClick={() => setShowPopUp(true)}>Need Tour Guide?</h3>
-        </div>
-        
-        <div className="Hotels-PopUP">
-          <h3>Need Hotels?</h3>
-        </div>
-        <p className="popular">Best Places to Visit</p>
-        <div className="hidden-text">
-          <p>A breathtaking landmark, rich in history and beauty, offering unforgettable experiences and stunning architectural marvels.</p>
-        </div>
-        <DelhiFoodCard data={cityData.famousPlaces}/> 
+  <div className="poster"></div>
+
+  {/* Popup logic */}
+  {showPopUp && (
+    <div className="popup-overlay">
+      <div className="popup-content">
+      {showPopUp && <TourGuid onclose={() => setShowPopUp(false)} />}
+
       </div>
+    </div>
+  )}
+
+  <div className="tour-PopUP">
+    <h3 onClick={() => setShowPopUp(true)}>Need Tour Guide?</h3>
+  </div>
+
+  <div className="Hotels-PopUP">
+    <h3>Need Hotels?</h3>
+  </div>
+
+  <p className="popular">Best Places to Visit</p>
+  <div className="hidden-text">
+    <p>A breathtaking landmark, rich in history and beauty, offering unforgettable experiences and stunning architectural marvels.</p>
+  </div>
+  <DelhiFoodCard data={cityData.famousPlaces} />
+</div>
+
 
       <div className="page4">
         <p className="popular">Shop Authentic Only</p>
