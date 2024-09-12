@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.profile-container {
+    /* height: 90vh; */
+    display: flex;
+    color: #b3b3b3;
+}
+  
+.sidebar {
+    width: 250px;
+    background-color: #202020;
+    padding: 20px;
+}
+  
+.sidebar h2 {
+    color: white;
+    margin-bottom: 40px;
+}
+  
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+  
+.sidebar li {
+    margin-bottom: 20px;
+    cursor: pointer;
+    color: gray;
+}
+  
+.sidebar li.active {
+    color: #d4af37; /* Gold color for active tab */
+}
+  
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #1b1b1b;
+}
+  
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+  
+.header h3 {
+    color: #969696;
+}
+.profile-details {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    /* justify-content: space-between; */
+}
+  
+.detail-row {
+    display: flex;
+    margin-bottom: 10px;
+}
+  
+.detail-row label {
+    font-weight: bold;
+    margin-right: 10px;
+    width: 100px;
+}
+  
+.detail-row p {
+    color: #bdbdbd;
+}
+  
+.profile-photo {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.detail-conatiner{
+    background-color: rgba(43, 41, 41, 0.808);
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+.products-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.product-cards {
+    display: flex;
+    gap: 3rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 7rem;
+    /* justify-content: center; */
+    /* position: absolute; */
+    /* left: 0; */
+    /* background-color: red; */
+  }
+  
+  .product-card {
+    /* width: 4vw; */
+    border: 1px solid #6b6b6bc5;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    width: 18vw;
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .product-card h4 {
+    margin: 10px 0;
+  }
+  
+  .products-section {
+    margin-top: 20px;
+  }
+  
+  

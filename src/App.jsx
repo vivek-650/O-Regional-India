@@ -8,7 +8,9 @@ import Footer from "./components/Footer";
 import FoodCards from "./components/FoodCards";
 import SearchPage from "./components/SearchPage"; // Import the SearchPage component
 import CityPage from "./components/CityPage"; // Import a CityPage to show city-specific details
-
+import TouristDashboard from "./components/core/Dashboard/TouristDashboard";
+import TourGuideDashboard from "./components/core/Dashboard/TourGuideDashboard";
+import BusinessDashboard from "./components/core/Dashboard/BusinessDashboard";
 // import OpenRoute from "./components/core/Auth/OpenRoute";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -101,14 +103,14 @@ function App() {
           </>
         }/>
 
-        <Route path="signup" element={
+        <Route path="/signup" element={
           // <OpenRoute>
             <Signup/>
           // </OpenRoute>
         }
         />
 
-        <Route path="login" element={
+        <Route path="/login" element={
             // <OpenRoute>
               <Login/>
             // </OpenRoute>
@@ -126,6 +128,9 @@ function App() {
 
         {/* Dynamic City Page */}
         <Route path="/:cityName" element={<CityPage />} />
+        <Route path="/dashboard/tourist" element={<TouristDashboard />} />
+        <Route path="/dashboard/tour-guide" element={<TourGuideDashboard />} />
+        <Route path="/dashboard/business-owner" element={<BusinessDashboard />} />
       </Routes>
     </Router>
   );
