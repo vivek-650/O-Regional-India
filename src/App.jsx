@@ -23,6 +23,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { getDoc, doc } from "firebase/firestore";
 import { useDispatch } from "react-redux";
 import { setUser } from "./slices/authSlice";
+import LandingPage from "./components/common/LandingPage";
 
 function App() {
 
@@ -135,6 +136,8 @@ function App() {
             </>
           }
         />
+
+        <Route path="landing" element={<LandingPage></LandingPage>}></Route>
 
         <Route path="signup" element={<OpenRoute><Signup /></OpenRoute>} />
         <Route path="login" element={<OpenRoute><Login /></OpenRoute>} />

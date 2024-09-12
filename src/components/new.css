@@ -1,0 +1,42 @@
+.app {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .location {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    background-color: #e7f1ff;
+  }
+  
+  .places-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .place-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .place-item h3 {
+    margin: 0;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+  }
+  
