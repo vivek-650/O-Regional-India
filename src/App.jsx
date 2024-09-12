@@ -6,50 +6,33 @@ import FestiveCards from "./components/FestiveCards";
 import CardCollection from "./components/CardCollection";
 import Footer from "./components/Footer";
 import FoodCards from "./components/FoodCards";
-import SearchPage from "./components/SearchPage";
-import CityPage from "./components/CityPage";
+import SearchPage from "./components/SearchPage"; // Import the SearchPage component
+import CityPage from "./components/CityPage"; // Import a CityPage to show city-specific details
 import Dashboard from "./components/core/Dashboard/Dashboard";
+
 import OpenRoute from "./components/core/Auth/OpenRoute";
 import PrivateRoute from "./components/core/Auth/PrivateRoute";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Import Router components
+
 import { useState, useEffect } from "react";
+
 import { auth, firestoreDb } from "./services/firebase";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged } from 'firebase/auth';
 import { getDoc, doc } from "firebase/firestore";
 import { useDispatch } from "react-redux";
 import { setUser } from "./slices/authSlice";
 
 function App() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
+
   const [showSearch, setShowSearch] = useState(false);
 
   const handleOpenSearch = () => setShowSearch(true);
   const handleCloseSearch = () => setShowSearch(false);
-
-  // Load Google Translate script
-  useEffect(() => {
-    const existingScript = document.getElementById("google-translate-script");
-    if (!existingScript) {
-      const googleTranslateScript = document.createElement("script");
-      googleTranslateScript.id = "google-translate-script";
-      googleTranslateScript.type = "text/javascript";
-      googleTranslateScript.async = true;
-      googleTranslateScript.src =
-        "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-      document.body.appendChild(googleTranslateScript);
-
-      window.googleTranslateElementInit = () => {
-        new window.google.translate.TranslateElement(
-          { pageLanguage: "en", layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE },
-          "google_translate_element"
-        );
-      };
-    }
-  }, []);
-
-  // Firebase authentication
+  
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (userr) => {
       if (userr) {
@@ -58,9 +41,13 @@ function App() {
           const claims = tokenResult.claims;
           const user = claims.user_id;
 
+          // console.log("User's Custom Claims: ", claims);
+
           const userDoc = await getDoc(doc(firestoreDb, "users", userr.uid));
           const role = userDoc.data().accountType;
-          dispatch(setUser({ user, role }));
+          // console.log("User account type: ", role);
+          dispatch(setUser({user, role}));
+
         } catch (error) {
           console.error("Error fetching user claims: ", error);
         }
@@ -69,8 +56,9 @@ function App() {
       }
     });
 
+    // Cleanup subscription on unmount
     return () => unsubscribe();
-  }, [dispatch]);
+  }, []);
 
   return (
     <Router>
@@ -132,14 +120,45 @@ function App() {
           }
         />
 
-        <Route path="signup" element={<OpenRoute><Signup /></OpenRoute>} />
-        <Route path="login" element={<OpenRoute><Login /></OpenRoute>} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/tour-guide-dashboard" element={<PrivateRoute allowedRoles={['Tour Guide']} />} />
-        <Route path="/business-dashboard" element={<PrivateRoute allowedRoles={['Business']} />} />
-        <Route path="/tourist-dashboard" element={<PrivateRoute allowedRoles={['Tourist']} />} />
-        <Route path="/not-authorized" element={<h1>Not Authorized</h1>} />
+        <Route path="signup" element={
+          <OpenRoute>
+            <Signup/>
+          </OpenRoute>
+        }
+        />
+
+        <Route path="login" element={
+            <OpenRoute>
+              <Login/>
+            </OpenRoute>
+          }
+        />
+
+        <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
+
+        {/* Private routes: accessible only if user is authenticated with the correct role */}
+        <Route path="/tour-guide-dashboard" element={<PrivateRoute allowedRoles={['Tour Guide']}>
+          {/* <TourGuideDashboard /> */}
+          </PrivateRoute>} />
+        <Route path="/business-dashboard" element={<PrivateRoute allowedRoles={['Business']}>
+          {/* <BusinessDashboard /> */}
+          </PrivateRoute>} />
+        <Route path="/tourist-dashboard" element={<PrivateRoute allowedRoles={['Tourist']}>
+          {/* <TouristDashboard /> */}
+          </PrivateRoute>} />
+
+        {/* Not authorized route */}
+        <Route path="/not-authorized" element={
+          <>
+          <h1>Not Authorized</h1>
+          </>
+        } />
+
+        {/* Dynamic City Page */}
         <Route path="/:cityName" element={<CityPage />} />
+        <Route path="/dashboard/tourist" element={<TouristDashboard />} />
+        <Route path="/dashboard/tour-guide" element={<TourGuideDashboard />} />
+        <Route path="/dashboard/business-owner" element={<BusinessDashboard />} />
       </Routes>
     </Router>
   );
