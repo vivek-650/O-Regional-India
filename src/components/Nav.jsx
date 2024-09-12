@@ -41,7 +41,7 @@ import { handleLogOut } from '../services/operations/authFire';
           {auth.isAuthenticated ? (
             <>
               <Link to={"/dashboard"}>
-                    <button className="">
+                    <button className="log-button">
                       Dashboard
                     </button>
               </Link>

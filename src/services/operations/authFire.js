@@ -68,11 +68,11 @@ export const handleLogin = async (loginData, dispatch, navigate) => {
 
         // Redirect based on role
         if (role === 'Tour Guide') {
-          navigate('/tour-guide-dashboard');
+          navigate('/dashboard/tour-guide');
         } else if (role === 'Business') {
-          navigate('/business-dashboard');
+          navigate('/dashboard/business-owner');
         } else {
-          navigate('/tourist-dashboard');
+          navigate('/dashboard/tourist');
         }
 
       } else {
