@@ -13,7 +13,7 @@ function FoodCards() {
       const scrolledToEnd = container.scrollLeft + container.offsetWidth >= container.scrollWidth;
       // Here, you could add logic to disable/enable buttons if needed
       // or perform some other UI changes when scrolling
-      console.log('Scrolled to end:', scrolledToEnd);
+      // console.log('Scrolled to end:', scrolledToEnd);
     }
 
     // Add scroll event listener
