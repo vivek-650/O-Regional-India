@@ -8,13 +8,16 @@
 }
 
 .container {
-    background: #171717;
+    background: rgba(0, 0, 0, 0.255);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: #fff;
     padding: 2rem;
     width: 90vw;
     height: 90vh;
     margin: 4rem auto;
     border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     display: flex;
     flex-direction: column;
     gap: .5rem;

@@ -6,6 +6,7 @@ import './index.css'
 import { Provider } from 'react-redux';
 import rootReducer from './reducer';
 import { configureStore } from '@reduxjs/toolkit';
+import LandingPage from './components/common/LandingPage.jsx'
 
 // Import your publishable key
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
@@ -21,7 +22,7 @@ const store = configureStore({
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>
-      <App />
+      <LandingPage />
     </Provider>
   </StrictMode>,
 )

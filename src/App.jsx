@@ -148,6 +148,7 @@ function App() {
         <Route path="/dashboard/tourist" element={<TouristDashboard />} />
         <Route path="/dashboard/tour-guide" element={<TourGuideDashboard />} />
         <Route path="/dashboard/business-owner" element={<BusinessDashboard />} />
+        
       </Routes>
     </Router>
   );

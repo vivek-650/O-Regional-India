@@ -1,0 +1,284 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=SUSE:wght@100..800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "SUSE", sans-serif;
+  }
+  
+  body {
+    font-family: "SUSE", sans-serif;
+  }
+  .main
+  {
+    width: 100%;
+    height: 100%;
+    background: #F6FBFF;
+  }
+  .landing-logo img{
+    width: 30rem;
+    height: 4rem;
+    /* margin-bottom: 20px; */
+  }
+  .landing-page1{
+    width: 100vw;
+    height: 100vh;
+  }
+  button {
+    cursor: pointer;
+    border: none;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Header Styles */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    /* background-color: #00bcd4; */
+    color: white;
+  }
+  
+  .logo h2 {
+    font-size: 1.5rem;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .search-bar {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .login-btn {
+    background-color: #006064;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  
+  /* Hero Section Styles */
+  .hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('https://wallpapercave.com/wp/wp7135785.jpg'); /* Replace with your actual image path */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: rgba(0, 188, 212, 0.7); */
+  }
+  
+  .hero-content {
+    position: relative;
+    text-align: center;
+    color: black;
+    z-index: 1;
+  }
+  
+  .hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  
+  .hero-content p {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: rgb(222, 237, 14);
+    margin-bottom: 30px;
+
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .discover-btn, .knowmore-btn {
+    background-color: #006064;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .discover-btn:hover, .knowmore-btn:hover {
+    background-color: #004d40;
+  }
+  .landing-page2{
+    margin-top: 10rem;
+    /* padding: 1rem; */
+    width: 100vw;
+    height: 100vh;
+    /* background:  #00bcd4; */
+    display: flex;
+    gap: 4rem;
+}
+  .left-div-page2{
+    width: 40vw;
+    margin: 2rem;
+    background: url('https://img.freepik.com/free-vector/hand-drawn-pattern-indian-monument-red-fort_1302-15552.jpg?size=626&ext=jpg');
+    background-size: cover;
+    background-position-x: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* border: 2px solid black; */
+    /* position: relative; */
+  }
+  .famous-place{
+    background:url('https://www.shutterstock.com/image-vector/kolkata-skyline-monuments-famous-architecture-260nw-2389565695.jpg');
+    background-position-y:10%;
+    height: 20vh;
+    width: 100%;
+    padding-bottom: 1rem;
+   /* margin-bottom: 1rem; */
+  }
+  .famous-food{
+    background:url('https://t3.ftcdn.net/jpg/02/69/62/20/360_F_269622083_VdHDLDkJ6ZKc8tmEN3M4LR995skrg6R2.jpg');
+    background-position-y:65%;
+    width: 100%;
+    height: 20vh;
+    padding-bottom: 1rem;
+   /* margin-bottom: 1rem; */
+  }
+  .famous-event{
+    background:url('https://www.shutterstock.com/image-vector/happy-people-celebrating-birthday-party-260nw-2283979947.jpg');
+    background-position-y:20%;
+    width: 100%;
+    height: 20vh;
+    padding-bottom: 1rem;
+   /* margin-bottom: 1rem; */
+  }
+  .famous-handicraft{
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnWssmeSAQVT2JXObj4fbm70fSE4BIEnRPbQ&s');
+    background-position-y:20%;
+    width: 100%;
+    height: 20vh;
+    padding-bottom: 1rem;
+   /* margin-bottom: 1rem; */
+  }
+  .left-div-page2 h1{
+    padding-top: 4rem;
+    /* font-weight: 500; */
+    margin-top: 00rem;
+    text-align: center;
+    color: #000;
+    /* margin-top: 1rem; */
+  }
+  .right-div-page2{
+    width: 60vw;
+    margin: 1rem;
+    /* background: red; */
+    display: flex;
+    margin-top: 2rem;
+    gap: 2.5rem;
+
+  }
+  #div-elm1{
+    background: url('https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-1024.png');
+    background-size: cover;
+    background-position-x: center;
+  }
+  #div-elm3{
+    background: url('https://as2.ftcdn.net/v2/jpg/02/04/63/83/1000_F_204638381_STpF0wHGl9k8FudjybTcwg1cqxFw9EjS.jpg');
+    background-size: cover;
+    background-position-x: center;
+  }
+  #div-elm2{
+    background: url('https://www.pngitem.com/pimgs/m/31-311873_transparent-languages-icon-png-multiple-language-logo-png.png');
+    background-size: cover;
+    background-position-x: center;
+  }
+  #div-elm4{
+    /* margin-top: 2rem; */
+    background: url('https://img.freepik.com/free-vector/chatbot-chat-message-vectorart_78370-4104.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1726012800&semt=ais_hybrid');
+    background-size:100%;
+    background-position-x: center;
+  }
+  #div-elm4 h1{
+    margin-top: 11rem;
+    font-size: 2rem;
+    line-height: 1;
+  }
+  
+  .right-div-elm{
+    width: 80%;
+    height: 40%;
+    margin-top: 2.3rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    color: #000;
+    text-align: center;
+  }
+  .right-div-elm h1{
+    margin-top: 3rem;
+  }
+  /* Footer Styles */
+  .footer {
+    padding: 20px;
+    background-color: #006064;
+    color: white;
+    text-align: center;
+  }
+  
+  .social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  /* FontAwesome Import */
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+  

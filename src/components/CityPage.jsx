@@ -82,6 +82,7 @@ function CityPage() {
         <div className="tour-PopUP">
           <h3 onClick={() => setShowPopUp(true)}>Need Tour Guide?</h3>
         </div>
+        
         <div className="Hotels-PopUP">
           <h3>Need Hotels?</h3>
         </div>
