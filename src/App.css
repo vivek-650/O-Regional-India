@@ -127,3 +127,12 @@ html, body{
 .Destination-cards{
     width: 100%;
 }
+/* Hide the Google Translate banner */
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+  }
+  
+  /* Adjust the body margin since the banner adds margin by default */
+  body {
+    top: 0px !important;
+  }

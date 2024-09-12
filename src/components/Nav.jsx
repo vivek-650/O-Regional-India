@@ -45,19 +45,19 @@ import { handleLogOut } from '../services/operations/authFire';
                       Dashboard
                     </button>
               </Link>
-              <button onClick={handleLogOutFun}>
+              <button onClick={handleLogOutFun} className='log-button'>
                 Log Out
               </button>
             </>
           ):(
             <>
             <Link to={"/signup"}>
-                  <button className="">
+                  <button className="log-button">
                     Sign Up
                   </button>
             </Link>
             <Link to={"/login"}>
-                  <button className="">
+                  <button className="log-button">
                     Login
                   </button>
             </Link>
