@@ -7,7 +7,7 @@ function LandingPage() {
         <div className='main'>
           {/* Header */}
           <div className="landing-page1">
-          <header className="header">
+          {/* <header className="header">
             <div className="landing-logo">
               <img src={logo} alt="" />
             </div>
@@ -23,7 +23,7 @@ function LandingPage() {
               <input type="text" placeholder="Search..." className="search-bar" />
               <button className="login-btn">Log In</button>
             </div>
-          </header>
+          </header> */}
     
           {/* Hero Section */}
           <section className="hero">
