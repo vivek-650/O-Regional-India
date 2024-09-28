@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import  { useState, useEffect } from 'react';
 import "../../../styles/TouristDashboard.css";
 import { fetchUserData } from '../../../services/operations/authUser';
 
@@ -18,7 +18,7 @@ const TouristDashboard = () => {
     };
 
       getUserData();
-  }, [UserData]);     
+  }, []);
 
   return (
     <div className="profile-container">
@@ -44,7 +44,7 @@ const TouristDashboard = () => {
             <div className="detail-row">
               <img src="https://via.placeholder.com/100" alt="Profile" className="profile-photo" />
             </div>
-            <h3>{UserData.email}</h3>
+            <h3>{userData.email}</h3>
             <div className='detail-conatiner'>
                 <div className="detail-row">
                     <label>Name:</label>

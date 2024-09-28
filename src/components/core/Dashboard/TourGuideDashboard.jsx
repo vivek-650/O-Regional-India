@@ -25,7 +25,7 @@ const TourGuideDashboard = () => {
     useEffect(() => {
       const getUserData = async () => {
         const UserData = await fetchUserData(); // Call the function
-        console.log("User data came: ",UserData);
+        // console.log("User data came: ",UserData);
         setUserData(UserData); // Store the fetched data in local state
       };
 
@@ -35,7 +35,7 @@ const TourGuideDashboard = () => {
     // const handleAddFamous = () =>{
 
     // }
-  
+
     return (
       <div className="profile-container">
         <div className="sidebar">
@@ -47,7 +47,7 @@ const TourGuideDashboard = () => {
             <li>Add Local Specialities</li>
           </ul>
         </div>
-  
+
         <div className="content">
           <div className="header">
             <div className="header-left">

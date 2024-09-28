@@ -6,20 +6,20 @@ const authSlice = createSlice({
     user: null,
     isAuthenticated: false,
     role: null, // user role (tourist, tour guide, business)
-    // role: localStorage.getItem("userRole") ? JSON.parse(localStorage.getItem("userRole")) : null,
+    // role: localStorage.getItem("OregionalIndiaUserRole") ? JSON.parse(localStorage.getItem("OregionalIndiaUserRole")) : null,
   },
   reducers: {
-    setUser: (state, action) => {
+    setUser(state, action) {
       state.user = action.payload.user;
       state.isAuthenticated = true;
       state.role = action.payload.role; // Store the user's role
-    //   localStorage.setItem("userRole", JSON.stringify(action.payload.role));
+      // localStorage.setItem("OregionalIndiaUserRole", JSON.stringify(action.payload.role));
     },
-    logout: (state) => {
+    logout(state) {
       state.user = null;
       state.isAuthenticated = false;
       state.role = null;
-    //   localStorage.removeItem("userRole");
+      // localStorage.removeItem("OregionalIndiaUserRole");
     },
   },
 });

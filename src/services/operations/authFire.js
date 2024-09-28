@@ -7,7 +7,6 @@ import {
   signOut,
 } from 'firebase/auth';
 import { setDoc, doc, getDoc } from 'firebase/firestore';
-import { redirect } from 'react-router-dom';
 import { setUser, logout } from '../../slices/authSlice';
 
 export const handleRegister = async (signupData, accountType, dispatch, navigate) => {
@@ -34,14 +33,7 @@ export const handleRegister = async (signupData, accountType, dispatch, navigate
 
         dispatch(setUser({ userId, accountType }));
 
-        if (accountType === 'Tour Guide') {
-          navigate('/tour-guide-dashboard');
-        } else if (accountType === 'Business') {
-          navigate('/business-dashboard');
-        } else {
-          navigate('/tourist-dashboard');
-        }
-
+        navigate('/login');
 
     } catch (error) {
       console.error("Error registering: ", error);
@@ -68,11 +60,11 @@ export const handleLogin = async (loginData, dispatch, navigate) => {
 
         // Redirect based on role
         if (role === 'Tour Guide') {
-          navigate('/dashboard/tour-guide');
+          navigate('/tour-guide-dashboard');
         } else if (role === 'Business') {
-          navigate('/dashboard/business-owner');
+          navigate('/business-dashboard');
         } else {
-          navigate('/dashboard/tourist');
+          navigate('/tourist-dashboard');
         }
 
       } else {
@@ -80,7 +72,7 @@ export const handleLogin = async (loginData, dispatch, navigate) => {
       }
     } catch (error) {
       console.error("Error logging in: ", error);
-      redirect('/login');
+      navigate('/login');
     }
   };
 

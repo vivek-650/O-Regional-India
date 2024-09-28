@@ -1,22 +1,37 @@
-import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
+// src/components/PrivateRoute.js
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { auth, firestoreDb } from '../../../services/firebase';
+import { onAuthStateChanged } from 'firebase/auth';
+import { doc, getDoc } from 'firebase/firestore';
 
-function PrivateRoute({ children, allowedRoles }) {
-    // Access authentication and role data from Redux store
-    const { isAuthenticated, role } = useSelector((state) => state.auth);
+function PrivateRoute({children, role}) {
+  const [isAllowed, setIsAllowed] = useState(false);
+  const navigate = useNavigate();
 
-    // If the user is not authenticated, redirect to login page
-    if (!isAuthenticated) {
-        return <Navigate to="/login" />;
-    }
+  useEffect(() => {
+    const checkAuth = async () => {
+      onAuthStateChanged(auth, async (user) => {
+        if (user) {
+          const docRef = doc(firestoreDb, 'users', user.uid);
+          const docSnap = await getDoc(docRef);
 
-    // If the user is authenticated but does not have the required role, redirect to not authorized page
-    if (allowedRoles && !allowedRoles.includes(role)) {
-        return <Navigate to="/not-authorized" />;
-    }
+          if (docSnap.exists() && docSnap.data().accountType === role) {
+            setIsAllowed(true);
+          } else {
+            navigate('/login');
+          }
+        } else {
+          navigate('/login');
+        }
+      });
+    };
 
-    // If user is authenticated and has the correct role, render the requested component (children)
-    return children;
+    checkAuth();
+  }, [role, navigate]);
+
+  return isAllowed ? children : null;
 }
 
 export default PrivateRoute;
+

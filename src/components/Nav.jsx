@@ -8,15 +8,16 @@ import SearchPage from './SearchPage';
 import { handleLogOut } from '../services/operations/authFire';
 
   const Nav = () => {
-    const auth = useSelector((state)=> state.auth);
-    console.log("Autheticated: ", auth.isAuthenticated);
+    const { isAuthenticated, role } = useSelector((state) => state.auth);
+    // console.log("Autheticated: ", isAuthenticated);
+    // console.log("User Account: ", role);
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const [isSearchVisible, setIsSearchVisible] = useState(false);
 
     const toggleSearch = () => {
-      setIsSearchVisible(!isSearchVisible);
+      setIsSearchVisible((prev) => !prev); // Safely toggle state
     };
 
     const handleLogOutFun = () =>{
@@ -38,13 +39,31 @@ import { handleLogOut } from '../services/operations/authFire';
           </button>
           {/* <i className="ri-login-box-line"></i> */}
 
-          {auth.isAuthenticated ? (
+          {isAuthenticated ? 
+          
+          (
             <>
-              <Link to={"/dashboard"}>
-                    <button className="log-button">
-                      Dashboard
-                    </button>
-              </Link>
+              {role === 'Tourist' &&
+                <Link to="/tourist-dashboard">
+                  <button className="log-button">
+                     Dashboard
+                  </button>
+                </Link>
+              }
+              {role === 'Tour Guide' &&
+                <Link to="/tour-guide-dashboard">
+                  <button className="log-button">
+                    Dashboard
+                  </button>
+                </Link>
+              }
+              {role === 'Business' &&
+                <Link to="/business-dashboard">
+                  <button className="log-button">
+                    Dashboard
+                  </button>
+                </Link>
+              }
               <button onClick={handleLogOutFun} className='log-button'>
                 Log Out
               </button>
@@ -64,9 +83,6 @@ import { handleLogOut } from '../services/operations/authFire';
             </>
           )}
 
-          {/* <button onClick={getUserClaims}>
-            Check User
-          </button> */}
         </div>
         {isSearchVisible && <SearchPage onClose={toggleSearch} />}
       </div>
