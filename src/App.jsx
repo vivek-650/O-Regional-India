@@ -9,7 +9,7 @@ import FoodCards from "./components/FoodCards";
 import SearchPage from "./components/SearchPage";
 import CityPage from "./components/CityPage";
 import TouristDashboard from "./components/core/Dashboard/TouristDashboard";
-import TourGuideDashboard from "./components/core/Dashboard/TourGuideDashboard";
+import TourGuideDashboard from "./components/core/Dashboard/TourGuide/TourGuideDashboard";
 import BusinessDashboard from "./components/core/Dashboard/BusinessDashboard";
 import OpenRoute from "./components/core/Auth/OpenRoute";
 import PrivateRoute from "./components/core/Auth/PrivateRoute";

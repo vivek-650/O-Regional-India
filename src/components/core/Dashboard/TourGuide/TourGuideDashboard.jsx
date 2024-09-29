@@ -2,8 +2,9 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { handleLogOut } from '../../../services/operations/authFire';
-import { fetchUserData } from "../../../services/operations/authUser";
+import { handleLogOut } from '../../../../services/operations/authFire';
+import { fetchUserData } from "../../../../services/operations/authUser";
+import { AddLocalSpecialities } from "./AddLocalSpecialities";
 
 const TourGuideDashboard = () => {
     const [activeTab, setActiveTab] = useState('profile'); // 'profile' is active by default
@@ -16,6 +17,10 @@ const TourGuideDashboard = () => {
     // Function to handle "My Profile" click
     const handleProfileClick = () => {
       setActiveTab('profile');
+    };
+
+    const handleAddClick = () => {
+      setActiveTab('Add');
     };
 
     const handleLogOutFun = () =>{
@@ -43,20 +48,22 @@ const TourGuideDashboard = () => {
           <ul>
             <li className={activeTab === 'profile' ? 'active' : ''} onClick={handleProfileClick}>My Profile</li>
             {/* <li>Settings</li> */}
+            <li className={activeTab === 'Add' ? 'active' : ''} onClick={handleAddClick}>Add Local Specialities</li>
             <li onClick={handleLogOutFun}>Logout</li>
-            <li>Add Local Specialities</li>
           </ul>
         </div>
 
         <div className="content">
-          <div className="header">
-            <div className="header-left">
-              <h3>Tour Guide Details</h3>
-            </div>
-          </div>
+          
           {/* By default, the profile details will be shown since activeTab is 'profile' */}
           {activeTab === 'profile' && (
+            
             <div className="profile-details">
+              {/* <div className="header"> */}
+                <div className="header-left">
+                  <h3>Tour Guide Details</h3>
+                </div>
+              {/* </div> */}
               <div className="detail-row">
                 <img src="https://via.placeholder.com/100" alt="Profile" className="profile-photo" />
               </div>
@@ -89,6 +96,12 @@ const TourGuideDashboard = () => {
               </div>
             </div>
           )}
+
+
+          {activeTab === 'Add' && (
+            <AddLocalSpecialities></AddLocalSpecialities>
+          )}
+
         </div>
       </div>
     );
