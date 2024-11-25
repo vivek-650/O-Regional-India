@@ -1,0 +1,139 @@
+#page1 {
+  width: 100vw;
+  height: 90vh;
+  /* background-color: red; */
+  /* padding: 0 3rem; */
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+#page1 > p {
+  position: absolute;
+  top: 40%;
+  color: rgba(255, 255, 255, 0.77);
+  font-size: 2rem;
+  font-weight: 600;
+}
+#video {
+  /* width: 80vw; */
+  height: 80vh;
+  margin: 1rem 0 0 0rem;
+  border-radius: 5px;
+  filter: brightness(70%);
+}
+
+#page2 {
+  /* height: 35vh; */
+  padding: 0 3rem;
+  /* background-color: red; */
+  position: relative;
+  overflow-x: hidden;
+  line-height: 1.5;
+  /* background: #f4f4f4; */
+  color: #111;
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+.hidden-text {
+  width: 80%;
+  /* background: red; */
+  /* margin: 5px 150px; */
+}
+.hidden-text p {
+  text-align: center;
+  font-size: 20px;
+  color: #5d5959;
+}
+/* page 2 poster design */
+.poster {
+  width: 80%;
+  height: 160px;
+  /* background: red; */
+  margin: 4% 10%;
+}
+#page3 {
+}
+#page4 {
+  /* height: 130vh; */
+  padding: 7vh 3rem;
+  /* background-color: red; */
+  position: relative;
+  overflow-x: hidden;
+  line-height: 1.5;
+  /* background: #f4f4f4; */
+  color: #111;
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+.poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.popular {
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #2c4058;
+  /* margin: 20px; */
+}
+.text {
+  text-align: center;
+  font-size: 19px;
+  color: #5d5959;
+}
+#page5 {
+  /* height: 100vh; */
+  padding: 0 3rem;
+  /* background-color: red; */
+  position: relative;
+  overflow-x: hidden;
+  line-height: 1.5;
+  /* background: #f4f4f4; */
+  color: #111;
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+.Destination-cards {
+  width: 100%;
+}
+
+/* new */
+.page .page-heading {
+  font-size: 3rem;
+  letter-spacing: -2px;
+}
+
+.page .page-button-div {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page .page-button-div button {
+  font-size: 1.5rem;
+  background-color: #2c4058;
+  color: #fff;
+}
+
+.page .page-button-div button:hover {
+  transform: scale(1.1);
+  transition: ease-in-out 0.2s;
+}
