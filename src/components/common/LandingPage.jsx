@@ -1,6 +1,5 @@
-import React from 'react'
 import '../../styles/LandingPage.css';
-import logo from '../../assets/images/logo_crop.png'
+// import logo from '../../assets/images/logo_crop.png'
 
 function LandingPage() {
     return (

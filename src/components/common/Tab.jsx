@@ -1,4 +1,6 @@
 
+import PropTypes from "prop-types";
+
 export default function Tab({ tabData, field, setField }) {
     return (
         <div className="tab-container">
@@ -14,3 +16,15 @@ export default function Tab({ tabData, field, setField }) {
         </div>
     );
 }
+
+Tab.propTypes = {
+    tabData: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+            type: PropTypes.string.isRequired,
+            tabName: PropTypes.string.isRequired,
+        })
+    ).isRequired,
+    field: PropTypes.string.isRequired,
+    setField: PropTypes.func.isRequired,
+};
